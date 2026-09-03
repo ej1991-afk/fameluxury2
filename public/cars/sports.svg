@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c0a"/>
+      <stop offset="1" stop-color="#1a1814"/>
+    </linearGradient>
+    <linearGradient id="car" x1="150" y1="220" x2="650" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d4b86a"/>
+      <stop offset="1" stop-color="#9a7b35"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="410" rx="260" ry="25" fill="#000" opacity="0.5"/>
+  <path d="M140 300 Q220 200 400 195 Q580 200 660 300 L675 360 H125 Z" fill="url(#car)"/>
+  <circle cx="250" cy="360" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="550" cy="360" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">SPORTS CAR</text>
+</svg>

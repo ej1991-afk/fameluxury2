@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080a0c"/>
+      <stop offset="1" stop-color="#141820"/>
+    </linearGradient>
+    <linearGradient id="car" x1="130" y1="240" x2="670" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4a9eff"/>
+      <stop offset="0.5" stop-color="#d8b86a"/>
+      <stop offset="1" stop-color="#8a7030"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="410" rx="270" ry="25" fill="#000" opacity="0.5"/>
+  <path d="M140 295 Q210 225 400 220 Q590 225 660 295 L672 355 H128 Z" fill="url(#car)"/>
+  <path d="M350 240 L400 210 L450 240" stroke="#4a9eff" stroke-width="2" fill="none" opacity="0.7"/>
+  <circle cx="245" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="555" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">ELECTRIC</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c0a"/>
+      <stop offset="1" stop-color="#1a1814"/>
+    </linearGradient>
+    <linearGradient id="car" x1="120" y1="250" x2="680" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d8b86a"/>
+      <stop offset="1" stop-color="#8a7030"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="410" rx="270" ry="25" fill="#000" opacity="0.5"/>
+  <path d="M130 290 Q200 230 400 225 Q600 230 670 290 L685 355 H115 Z" fill="url(#car)"/>
+  <rect x="300" y="235" width="200" height="40" rx="3" fill="#1a1a18" opacity="0.4"/>
+  <circle cx="240" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="560" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">SEDAN</text>
+</svg>

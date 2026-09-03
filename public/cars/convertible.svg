@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c0a"/>
+      <stop offset="1" stop-color="#1a1814"/>
+    </linearGradient>
+    <linearGradient id="car" x1="140" y1="230" x2="660" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e0c878"/>
+      <stop offset="1" stop-color="#a08030"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="410" rx="260" ry="25" fill="#000" opacity="0.5"/>
+  <path d="M150 300 Q200 210 400 205 Q600 210 650 300 L660 355 H140 Z" fill="url(#car)"/>
+  <path d="M300 205 L350 180 L450 180 L500 205" stroke="#e8d5a3" stroke-width="2" fill="none" opacity="0.5"/>
+  <circle cx="250" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="550" cy="355" r="30" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">CONVERTIBLE</text>
+</svg>

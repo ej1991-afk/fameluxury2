@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c0a"/>
+      <stop offset="1" stop-color="#1a1814"/>
+    </linearGradient>
+    <linearGradient id="car" x1="150" y1="200" x2="650" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c9a84c"/>
+      <stop offset="1" stop-color="#8a6f2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="410" rx="260" ry="25" fill="#000" opacity="0.5"/>
+  <path d="M120 310 Q200 180 400 170 Q600 180 680 310 L700 370 H100 Z" fill="url(#car)"/>
+  <path d="M280 200 Q400 160 520 200" stroke="#e8d5a3" stroke-width="2" fill="none" opacity="0.6"/>
+  <circle cx="230" cy="370" r="32" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="570" cy="370" r="32" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">SUPERCAR</text>
+</svg>

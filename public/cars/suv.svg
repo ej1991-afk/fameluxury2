@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0c0c0a"/>
+      <stop offset="1" stop-color="#1a1814"/>
+    </linearGradient>
+    <linearGradient id="car" x1="100" y1="240" x2="700" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c9a84c"/>
+      <stop offset="1" stop-color="#7a6428"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <ellipse cx="400" cy="415" rx="300" ry="28" fill="#000" opacity="0.5"/>
+  <path d="M100 310 Q150 210 400 200 Q650 210 700 310 L715 375 H85 Z" fill="url(#car)"/>
+  <rect x="350" y="215" width="100" height="50" rx="4" fill="#1a1a18" opacity="0.5"/>
+  <circle cx="220" cy="375" r="34" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <circle cx="580" cy="375" r="34" fill="#111" stroke="#d8b86a" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#d8b86a" font-family="system-ui,sans-serif" font-size="22" font-weight="700" letter-spacing="3">LUXURY SUV</text>
+</svg>
