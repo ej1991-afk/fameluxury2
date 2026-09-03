@@ -10,7 +10,7 @@ import {
   useTransition,
   type ReactNode,
 } from "react";
-import { IconClose, IconMenu } from "@/components/Icons";
+import { IconChevron, IconClose, IconMenu } from "@/components/Icons";
 import { categoryLabels, getAllBrands } from "@/lib/cars";
 import {
   brandToSlug,
@@ -43,6 +43,46 @@ function optionClass(active: boolean) {
       ? "border-gold/60 bg-gold/10 text-foreground"
       : "border-border/80 bg-background/40 text-muted hover:border-gold/35 hover:text-foreground"
   }`;
+}
+
+function FilterAccordion({
+  title,
+  defaultOpen = false,
+  summary,
+  children,
+}: {
+  title: string;
+  defaultOpen?: boolean;
+  summary?: string;
+  children: ReactNode;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border-b border-border/70 pb-3">
+      <button
+        type="button"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        className="flex w-full items-center gap-3 py-2 text-left"
+      >
+        <span className="min-w-0 flex-1">
+          <span className="block text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
+            {title}
+          </span>
+          {!open && summary ? (
+            <span className="mt-1 block truncate text-xs text-muted">{summary}</span>
+          ) : null}
+        </span>
+        <IconChevron
+          className={`h-4 w-4 shrink-0 text-gold transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      {open ? <div className="mt-2">{children}</div> : null}
+    </div>
+  );
 }
 
 export function FleetFilterPanel({
@@ -95,162 +135,182 @@ export function FleetFilterPanel({
     });
   }
 
-  const filtersBody = (
-    <div className="space-y-7">
-      <div>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
-          Body style
-        </p>
-        <div className="mt-3 grid gap-2">
-          <button
-            type="button"
-            onClick={() => go({ ...query, category: "all" })}
-            className={optionClass(!query.category || query.category === "all")}
-          >
-            <span>All vehicles</span>
-            <span className="text-xs text-muted">{facets.categoryCounts.all}</span>
-          </button>
-          {categories.map(([key, label]) => (
+  const activeCategoryLabel =
+    query.category && query.category !== "all"
+      ? categoryLabels[query.category as CarCategory]
+      : "All vehicles";
+  const activePriceBand = priceBands.find((band) => band.id === query.price);
+  const activeBrandLabel = query.brand
+    ? brands.find((brand) => brandToSlug(brand) === query.brand)
+    : undefined;
+
+  function filtersBody() {
+    return (
+      <div className="space-y-4">
+        <FilterAccordion
+          title="Body style"
+          defaultOpen
+          summary={activeCategoryLabel}
+        >
+          <div className="grid gap-2">
             <button
-              key={key}
               type="button"
-              onClick={() => go({ ...query, category: key })}
-              className={optionClass(query.category === key)}
+              onClick={() => go({ ...query, category: "all" })}
+              className={optionClass(
+                !query.category || query.category === "all",
+              )}
             >
-              <span>{label}</span>
+              <span>All vehicles</span>
               <span className="text-xs text-muted">
-                {facets.categoryCounts[key] ?? 0}
+                {facets.categoryCounts.all}
               </span>
             </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
-          Daily rate
-        </p>
-        <div className="mt-3 grid gap-2">
-          {priceBands.map((band) => (
-            <button
-              key={band.id}
-              type="button"
-              onClick={() =>
-                go({
-                  ...query,
-                  price: query.price === band.id ? undefined : band.id,
-                })
-              }
-              className={optionClass(query.price === band.id)}
-            >
-              <span>
-                <span className="block font-medium text-foreground">
-                  AED {band.label}
-                </span>
-                <span className="mt-0.5 block text-xs text-muted">
-                  {band.hint}
-                </span>
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
-          Brand
-        </p>
-        <div className="mt-3 grid max-h-56 gap-2 overflow-y-auto pr-1 [scrollbar-width:thin]">
-          {brands.map((brand) => {
-            const slug = brandToSlug(brand);
-            const count = facets.brandCounts[slug] ?? 0;
-            return (
+            {categories.map(([key, label]) => (
               <button
-                key={brand}
+                key={key}
                 type="button"
-                disabled={count === 0 && query.brand !== slug}
+                onClick={() => go({ ...query, category: key })}
+                className={optionClass(query.category === key)}
+              >
+                <span>{label}</span>
+                <span className="text-xs text-muted">
+                  {facets.categoryCounts[key] ?? 0}
+                </span>
+              </button>
+            ))}
+          </div>
+        </FilterAccordion>
+
+        <FilterAccordion
+          title="Daily rate"
+          defaultOpen={Boolean(query.price)}
+          summary={
+            activePriceBand ? `AED ${activePriceBand.label}` : "Any rate"
+          }
+        >
+          <div className="grid gap-2">
+            {priceBands.map((band) => (
+              <button
+                key={band.id}
+                type="button"
                 onClick={() =>
                   go({
                     ...query,
-                    brand: query.brand === slug ? undefined : slug,
+                    price: query.price === band.id ? undefined : band.id,
                   })
                 }
-                className={`${optionClass(query.brand === slug)} disabled:cursor-not-allowed disabled:opacity-35`}
+                className={optionClass(query.price === band.id)}
               >
-                <span>{brand}</span>
-                <span className="text-xs text-muted">{count}</span>
+                <span>
+                  <span className="block font-medium text-foreground">
+                    AED {band.label}
+                  </span>
+                  <span className="mt-0.5 block text-xs text-muted">
+                    {band.hint}
+                  </span>
+                </span>
               </button>
-            );
-          })}
-        </div>
-      </div>
+            ))}
+          </div>
+        </FilterAccordion>
 
-      <div>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
-          Seats
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {seatOptions.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              onClick={() =>
-                go({
-                  ...query,
-                  seats:
-                    query.seats === option.value ? undefined : option.value,
-                })
-              }
-              className={`min-h-10 rounded-full border px-3.5 text-sm font-medium transition-colors ${
-                query.seats === option.value
-                  ? "border-gold bg-gold text-background"
-                  : "border-border text-muted hover:border-gold/40 hover:text-foreground"
+        <FilterAccordion
+          title="Brand"
+          defaultOpen={Boolean(query.brand)}
+          summary={activeBrandLabel ?? "All brands"}
+        >
+          <div className="grid gap-2">
+            {brands.map((brand) => {
+              const slug = brandToSlug(brand);
+              const count = facets.brandCounts[slug] ?? 0;
+              return (
+                <button
+                  key={brand}
+                  type="button"
+                  disabled={count === 0 && query.brand !== slug}
+                  onClick={() =>
+                    go({
+                      ...query,
+                      brand: query.brand === slug ? undefined : slug,
+                    })
+                  }
+                  className={`${optionClass(query.brand === slug)} disabled:cursor-not-allowed disabled:opacity-35`}
+                >
+                  <span>{brand}</span>
+                  <span className="text-xs text-muted">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+        </FilterAccordion>
+
+        <div>
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
+            Seats
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {seatOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() =>
+                  go({
+                    ...query,
+                    seats:
+                      query.seats === option.value ? undefined : option.value,
+                  })
+                }
+                className={`min-h-10 rounded-full border px-3.5 text-sm font-medium transition-colors ${
+                  query.seats === option.value
+                    ? "border-gold bg-gold text-background"
+                    : "border-border text-muted hover:border-gold/40 hover:text-foreground"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
+            Booking terms
+          </p>
+          <button
+            type="button"
+            onClick={() =>
+              go({
+                ...query,
+                deposit:
+                  query.deposit === "no-deposit" ? undefined : "no-deposit",
+              })
+            }
+            className={`mt-3 ${optionClass(query.deposit === "no-deposit")}`}
+          >
+            <span>No deposit models only</span>
+            <span
+              className={`h-4 w-4 rounded-full border ${
+                query.deposit === "no-deposit"
+                  ? "border-gold bg-gold"
+                  : "border-border"
               }`}
-            >
-              {option.label}
-            </button>
-          ))}
+              aria-hidden
+            />
+          </button>
         </div>
-      </div>
 
-      <div>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gold">
-          Booking terms
-        </p>
-        <button
-          type="button"
-          onClick={() =>
-            go({
-              ...query,
-              deposit:
-                query.deposit === "no-deposit" ? undefined : "no-deposit",
-            })
-          }
-          className={`mt-3 ${optionClass(query.deposit === "no-deposit")}`}
-        >
-          <span>No deposit models only</span>
-          <span
-            className={`h-4 w-4 rounded-full border ${
-              query.deposit === "no-deposit"
-                ? "border-gold bg-gold"
-                : "border-border"
-            }`}
-            aria-hidden
-          />
-        </button>
+        {chips.length > 0 && (
+          <Link
+            href={fleetHref({})}
+            className="inline-flex text-sm font-semibold text-gold hover:underline"
+            onClick={() => setOpen(false)}
+          >
+            Clear all filters
+          </Link>
+        )}
       </div>
-
-      {chips.length > 0 && (
-        <Link
-          href={fleetHref({})}
-          className="inline-flex text-sm font-semibold text-gold hover:underline"
-          onClick={() => setOpen(false)}
-        >
-          Clear all filters
-        </Link>
-      )}
-    </div>
-  );
+    );
+  }
 
   return (
     <div className={pending ? "opacity-80 transition-opacity" : undefined}>
@@ -329,7 +389,7 @@ export function FleetFilterPanel({
               </span>
             </div>
             <div className="gold-hairline mt-4" />
-            <div className="mt-5">{filtersBody}</div>
+            <div className="mt-5">{filtersBody()}</div>
           </div>
         </aside>
 
@@ -356,7 +416,7 @@ export function FleetFilterPanel({
                 <IconClose className="h-4 w-4" />
               </button>
             </div>
-            {filtersBody}
+            {filtersBody()}
           </div>
         </div>
       ) : null}
