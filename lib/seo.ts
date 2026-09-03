@@ -1,6 +1,7 @@
 import { cars, getAllBrands } from "@/lib/cars";
 import { faqItems } from "@/lib/faq";
 import { siteConfig } from "@/lib/site";
+import type { BlogPost } from "@/lib/types";
 
 export const defaultKeywords = [
   "luxury car rental Dubai",
@@ -228,10 +229,8 @@ export function blogIndexJsonLd(
   };
 }
 
-export function blogPostFaqs(post: {
-  content: { type: string; items?: { question: string; answer: string }[] }[];
-}) {
-  return post.content
-    .filter((block) => block.type === "faq")
-    .flatMap((block) => block.items ?? []);
+export function blogPostFaqs(post: BlogPost) {
+  return post.content.flatMap((block) =>
+    block.type === "faq" ? block.items : [],
+  );
 }
