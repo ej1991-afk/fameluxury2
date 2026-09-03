@@ -24,7 +24,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-xl safe-top">
       <div className="gold-hairline" />
-      <div className="mx-auto flex h-[4.75rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-[5.75rem] max-w-7xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
         <Logo />
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">

@@ -9,7 +9,7 @@ export function Logo({ className = "" }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex shrink-0 items-center gap-3 ${className}`}
+      className={`inline-flex shrink-0 items-center ${className}`}
       aria-label={`${siteConfig.name} — luxury car rental Dubai`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -21,14 +21,6 @@ export function Logo({ className = "" }: LogoProps) {
         className="h-[3.6rem] w-auto object-contain sm:h-16"
         decoding="async"
       />
-      <span className="hidden min-[420px]:grid leading-none">
-        <span className="font-display text-xl font-semibold tracking-wide text-foreground sm:text-2xl">
-          {siteConfig.logoPrimary}
-        </span>
-        <span className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.28em] text-gold">
-          {siteConfig.logoSecondary}
-        </span>
-      </span>
     </Link>
   );
 }
