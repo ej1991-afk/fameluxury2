@@ -158,98 +158,11 @@ summary {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
-@keyframes reveal-up {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes reveal-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Scroll reveals — armed after JS mounts (.reveal-enabled) */
-.reveal {
-  --reveal-delay: 0ms;
-}
-
-.reveal.reveal-enabled:not(.reveal-in) {
-  opacity: 0;
-  transform: translate3d(0, 40px, 0);
-}
-
-.reveal.reveal-enabled.reveal-in {
-  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--reveal-delay);
-}
-
-.reveal-stagger.reveal-enabled:not(.reveal-in) > * {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-}
-
-.reveal-stagger.reveal-enabled.reveal-in > * {
-  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(2) {
-  animation-delay: 0.12s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(3) {
-  animation-delay: 0.19s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(4) {
-  animation-delay: 0.26s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(5) {
-  animation-delay: 0.33s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(6) {
-  animation-delay: 0.4s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(7) {
-  animation-delay: 0.47s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(8) {
-  animation-delay: 0.54s;
-}
-.reveal-stagger.reveal-enabled.reveal-in > *:nth-child(n + 9) {
-  animation-delay: 0.6s;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in-up {
     animation: none;
     opacity: 1;
     transform: none;
-  }
-
-  /* Keep a light fade so Windows “Animation effects: Off” still shows scroll reveals */
-  .reveal.reveal-enabled:not(.reveal-in),
-  .reveal-stagger.reveal-enabled:not(.reveal-in) > * {
-    opacity: 0;
-    transform: none;
-  }
-
-  .reveal.reveal-enabled.reveal-in {
-    animation: reveal-fade 0.45s ease both;
-  }
-
-  .reveal-stagger.reveal-enabled.reveal-in > * {
-    animation: reveal-fade 0.4s ease both;
   }
 }
 
@@ -281,7 +194,10 @@ img[data-nimg="fill"] {
 .mobile-nav-btn {
   position: fixed;
   right: 1rem;
-  top: calc(0.75rem + env(safe-area-inset-top, 0px));
+  /* Vertically center in the sticky header bar (min-h 5.75rem, btn 3rem) */
+  top: calc(
+    env(safe-area-inset-top, 0px) + 1px + ((5.75rem - 3rem) / 2)
+  );
   z-index: 100000;
   display: flex;
   align-items: center;
