@@ -135,6 +135,16 @@ export function FleetFilterPanel({
     });
   }
 
+  function resetFilters() {
+    setSearch("");
+    startTransition(() => {
+      router.push(fleetHref({}));
+      setOpen(false);
+    });
+  }
+
+  const hasFilters = chips.length > 0;
+
   const activeCategoryLabel =
     query.category && query.category !== "all"
       ? categoryLabels[query.category as CarCategory]
@@ -299,14 +309,14 @@ export function FleetFilterPanel({
           </button>
         </div>
 
-        {chips.length > 0 && (
-          <Link
-            href={fleetHref({})}
-            className="inline-flex text-sm font-semibold text-gold hover:underline"
-            onClick={() => setOpen(false)}
+        {hasFilters && (
+          <button
+            type="button"
+            onClick={resetFilters}
+            className="inline-flex min-h-10 w-full items-center justify-center rounded-full border border-border px-4 text-sm font-semibold text-foreground transition-colors hover:border-gold/40 hover:text-gold"
           >
-            Clear all filters
-          </Link>
+            Reset filters
+          </button>
         )}
       </div>
     );
@@ -363,8 +373,8 @@ export function FleetFilterPanel({
           </div>
         </div>
 
-        {chips.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2 border-t border-border/70 pt-4">
+        {hasFilters && (
+          <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border/70 pt-4">
             {chips.map((chip) => (
               <Link
                 key={chip.key}
@@ -375,6 +385,13 @@ export function FleetFilterPanel({
                 <IconClose className="h-3 w-3" />
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={resetFilters}
+              className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-muted transition-colors hover:border-gold/40 hover:text-gold"
+            >
+              Reset all
+            </button>
           </div>
         )}
       </div>
@@ -382,11 +399,21 @@ export function FleetFilterPanel({
       <div className="mt-8 grid gap-8 lg:grid-cols-[17.5rem_minmax(0,1fr)] lg:items-start">
         <aside className="hidden lg:block">
           <div className="sticky top-28 luxury-panel p-5">
-            <div className="flex items-center justify-between gap-3">
-              <p className="font-display text-xl font-semibold">Refine</p>
-              <span className="text-xs uppercase tracking-[0.16em] text-muted">
-                {total} matches
-              </span>
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-display text-xl font-semibold">Refine</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">
+                  {total} matches
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={resetFilters}
+                disabled={!hasFilters}
+                className="shrink-0 text-xs font-semibold uppercase tracking-[0.14em] text-gold transition-opacity hover:text-gold-light disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                Reset
+              </button>
             </div>
             <div className="gold-hairline mt-4" />
             <div className="mt-5">{filtersBody()}</div>
@@ -405,16 +432,31 @@ export function FleetFilterPanel({
             onClick={() => setOpen(false)}
           />
           <div className="absolute inset-x-0 bottom-0 max-h-[88vh] overflow-y-auto rounded-t-3xl border border-border bg-background p-5 safe-bottom">
-            <div className="mb-4 flex items-center justify-between">
-              <p className="font-display text-2xl font-semibold">Refine fleet</p>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
-                aria-label="Close"
-              >
-                <IconClose className="h-4 w-4" />
-              </button>
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <div>
+                <p className="font-display text-2xl font-semibold">Refine fleet</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">
+                  {total} matches
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={resetFilters}
+                  disabled={!hasFilters}
+                  className="rounded-full border border-border px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-gold disabled:cursor-not-allowed disabled:opacity-35"
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
+                  aria-label="Close"
+                >
+                  <IconClose className="h-4 w-4" />
+                </button>
+              </div>
             </div>
             {filtersBody()}
           </div>
