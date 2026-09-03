@@ -108,6 +108,84 @@ export function IconCar(props: IconProps) {
   );
 }
 
+export function IconGauge(props: IconProps) {
+  const { title, ...rest } = base(props);
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} {...rest}>
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M12 19a8 8 0 1 1 8-8"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 11.5 16.2 7.3"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      <circle cx="12" cy="11.5" r="1.3" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function IconSpeed(props: IconProps) {
+  const { title, ...rest } = base(props);
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} {...rest}>
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M5 13h4l2-6 3 10 2-4h3"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconAwd(props: IconProps) {
+  const { title, ...rest } = base(props);
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} {...rest}>
+      {title ? <title>{title}</title> : null}
+      <circle cx="6.5" cy="12" r="2.4" stroke="currentColor" strokeWidth="1.7" />
+      <circle cx="17.5" cy="12" r="2.4" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M9 12h6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+      <path
+        d="M12 9.2v5.6"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function IconSeats(props: IconProps) {
+  const { title, ...rest } = base(props);
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} {...rest}>
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M8 5.5c0-1.4 1.1-2.5 2.5-2.5h3C14.9 3 16 4.1 16 5.5V9H8V5.5z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.5 9h11l1 8.5H5.5L6.5 9z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <path d="M8 21h8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconStar(props: IconProps) {
   const { title, ...rest } = base(props);
   return (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
 import { getLocationPages, locations } from "@/lib/locations";
 import { whatsappUrl } from "@/lib/site";
 
@@ -15,7 +16,7 @@ export default function LocationsPage() {
   return (
     <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             Locations
           </p>
@@ -26,11 +27,13 @@ export default function LocationsPage() {
             Hotel, residence, office, and airport handover across major Dubai
             districts. Inter-emirate delivery quoted individually.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-10">
-          <h2 className="text-lg font-bold">Popular delivery areas</h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal>
+            <h2 className="text-lg font-bold">Popular delivery areas</h2>
+          </Reveal>
+          <Reveal stagger className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((location) => (
               <Link
                 key={location.slug}
@@ -44,10 +47,10 @@ export default function LocationsPage() {
                 </span>
               </Link>
             ))}
-          </div>
+          </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((location) => (
             <div
               key={location.name}
@@ -68,9 +71,9 @@ export default function LocationsPage() {
               <p className="mt-2 text-sm text-muted">{location.description}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
+        <Reveal className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
           <h2 className="text-lg font-bold">Need delivery to a specific address?</h2>
           <p className="mt-2 text-sm text-muted">
             Share your exact location and timing on WhatsApp for a delivery quote.
@@ -85,7 +88,7 @@ export default function LocationsPage() {
           >
             Request Delivery
           </a>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

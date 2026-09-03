@@ -1,4 +1,5 @@
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { Reveal } from "@/components/Reveal";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import {
   mapsDirectionsUrl,
@@ -41,7 +42,7 @@ export default function ContactPage() {
   return (
     <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             Contact
           </p>
@@ -52,9 +53,9 @@ export default function ContactPage() {
             WhatsApp is the fastest way to check availability, confirm rates,
             and arrange delivery across Dubai. We reply during business hours.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2">
+        <Reveal className="mt-10 grid gap-8 lg:grid-cols-2">
           <div className="grid gap-6">
             <WhatsAppLink
               href={whatsappUrl()}
@@ -110,9 +111,9 @@ export default function ContactPage() {
             </div>
           </div>
           <EnquiryForm />
-        </div>
+        </Reveal>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border">
+        <Reveal className="mt-12 overflow-hidden rounded-2xl border border-border">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-surface px-4 py-3 sm:px-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-gold">
               Find us on the map
@@ -134,9 +135,9 @@ export default function ContactPage() {
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-        </div>
+        </Reveal>
 
-        <div className="mt-16">
+        <Reveal className="mt-16">
           <h2 className="font-display text-2xl font-semibold tracking-tight">
             Document requirements
           </h2>
@@ -144,7 +145,7 @@ export default function ContactPage() {
             All documents are verified before handover. Requirements may vary by
             vehicle.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <Reveal stagger className="mt-8 grid gap-6 sm:grid-cols-2">
             {documentSections.map((section) => (
               <div key={section.title} className="luxury-panel p-6">
                 <h3 className="font-bold">{section.title}</h3>
@@ -158,8 +159,8 @@ export default function ContactPage() {
                 </ul>
               </div>
             ))}
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </div>
     </div>
   );

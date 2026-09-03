@@ -4,8 +4,9 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CarImage } from "@/components/CarImage";
 import { CompareButton } from "@/components/CompareButton";
 import { FleetCard } from "@/components/FleetCard";
-import { IconCheck, IconWhatsApp } from "@/components/Icons";
+import { IconAwd, IconCheck, IconGauge, IconSeats, IconSpeed, IconWhatsApp } from "@/components/Icons";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import { categoryLabels, cars, getCarBySlug, getCarsByBrand } from "@/lib/cars";
 import { vehicleJsonLd } from "@/lib/seo";
 import { siteConfig, whatsappCarUrl } from "@/lib/site";
@@ -62,16 +63,16 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
         />
 
         <div className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-border">
+          <Reveal className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-border">
             <CarImage car={car} priority sizes="(max-width: 1024px) 100vw, 50vw" />
             {car.noDeposit && (
               <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase text-background">
                 No Deposit
               </span>
             )}
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
               {car.brand} rental Dubai
             </p>
@@ -97,23 +98,38 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <Reveal stagger className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {[
-                { label: "Horsepower", value: `${car.specs.horsepower} hp` },
-                { label: "0-100", value: car.specs.acceleration.replace("0-100 km/h ", "") },
-                { label: "Drive", value: car.specs.drive },
-                { label: "Seats", value: `${car.specs.seats}` },
+                {
+                  label: "Horsepower",
+                  value: `${car.specs.horsepower} hp`,
+                  icon: IconGauge,
+                },
+                {
+                  label: "0-100",
+                  value: car.specs.acceleration.replace("0-100 km/h ", ""),
+                  icon: IconSpeed,
+                },
+                { label: "Drive", value: car.specs.drive, icon: IconAwd },
+                {
+                  label: "Seats",
+                  value: `${car.specs.seats}`,
+                  icon: IconSeats,
+                },
                 { label: "Transmission", value: car.specs.transmission },
                 { label: "Engine", value: car.specs.engine },
               ].map((spec) => (
                 <div key={spec.label} className="luxury-panel p-3">
-                  <p className="text-[0.65rem] font-bold uppercase tracking-wider text-gold">
+                  <p className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-gold">
+                    {"icon" in spec && spec.icon ? (
+                      <spec.icon className="h-3.5 w-3.5" />
+                    ) : null}
                     {spec.label}
                   </p>
                   <p className="mt-1 text-sm font-medium">{spec.value}</p>
                 </div>
               ))}
-            </div>
+            </Reveal>
 
             <div className="relative z-10 mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -127,10 +143,10 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
               </a>
               <CompareButton carId={car.id} />
             </div>
-          </div>
+          </Reveal>
         </div>
 
-        <section className="luxury-panel mt-16 p-6 sm:p-8">
+        <Reveal as="section" className="luxury-panel mt-16 p-6 sm:p-8">
           <h2 className="font-display text-2xl font-semibold">
             Rent the {fullName} in Dubai
           </h2>
@@ -156,18 +172,20 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
               </li>
             ))}
           </ul>
-        </section>
+        </Reveal>
 
         {related.length > 0 ? (
           <section className="mt-16">
-            <h2 className="font-display text-2xl font-semibold">
-              More {car.brand} cars for rent
-            </h2>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal>
+              <h2 className="font-display text-2xl font-semibold">
+                More {car.brand} cars for rent
+              </h2>
+            </Reveal>
+            <Reveal stagger className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((item) => (
                 <FleetCard key={item.id} car={item} compact />
               ))}
-            </div>
+            </Reveal>
           </section>
         ) : null}
       </div>

@@ -1,4 +1,5 @@
 import { IconStar } from "@/components/Icons";
+import { Reveal } from "@/components/Reveal";
 import { reviews } from "@/lib/reviews";
 import { SectionHeader } from "@/components/SectionHeader";
 
@@ -6,13 +7,15 @@ export function Reviews() {
   return (
     <section className="border-y border-border bg-surface py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="Client stories"
-          title="What guests say after the drive"
-          description="Verified handover experiences from visitors and residents who booked self-drive luxury cars through Fame Luxury."
-          align="center"
-        />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <SectionHeader
+            eyebrow="Client stories"
+            title="What guests say after the drive"
+            description="Verified handover experiences from visitors and residents who booked self-drive luxury cars through Fame Luxury."
+            align="center"
+          />
+        </Reveal>
+        <Reveal stagger className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review) => (
             <blockquote
               key={`${review.name}-${review.car}`}
@@ -36,7 +39,7 @@ export function Reviews() {
               </footer>
             </blockquote>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

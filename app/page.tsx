@@ -15,6 +15,7 @@ import {
   IconWhatsApp,
 } from "@/components/Icons";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import { Reviews } from "@/components/Reviews";
 import { SectionHeader } from "@/components/SectionHeader";
 import { BlogCard } from "@/components/BlogCard";
@@ -179,7 +180,10 @@ export default function HomePage() {
       <BrandMarquee />
 
       <section className="border-b border-border bg-surface py-10">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 sm:grid-cols-4 sm:px-6 lg:px-8">
+        <Reveal
+          stagger
+          className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 sm:grid-cols-4 sm:px-6 lg:px-8"
+        >
           {[
             { value: `${siteConfig.stats.vehicles}+`, label: "Curated vehicles" },
             { value: `${siteConfig.stats.brands}+`, label: "Luxury brands" },
@@ -191,10 +195,10 @@ export default function HomePage() {
               <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <Reveal as="section" className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our collection"
@@ -203,15 +207,15 @@ export default function HomePage() {
             href="/fleet"
             cta="View full fleet"
           />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {getHomepageFeaturedCars().map((car) => (
               <FleetCard key={car.id} car={car} compact />
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="border-y border-border bg-surface py-16 sm:py-20">
+      <Reveal as="section" className="border-y border-border bg-surface py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <SectionHeader
@@ -219,7 +223,7 @@ export default function HomePage() {
               title="A calmer way to rent a supercar in Dubai"
               description="Most luxury rental sites in Dubai stack the same cars, the same badges, and the same forms. Fame Luxury is built around confirmed terms, a tighter fleet, and a concierge who actually answers."
             />
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <Reveal stagger className="mt-8 grid gap-4 sm:grid-cols-2">
               {reasons.map((reason) => (
                 <article key={reason.title} className="luxury-panel p-5">
                   <reason.icon className="h-6 w-6 text-gold" />
@@ -227,7 +231,7 @@ export default function HomePage() {
                   <p className="mt-2 text-sm leading-relaxed text-muted">{reason.body}</p>
                 </article>
               ))}
-            </div>
+            </Reveal>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
             <Image
@@ -243,9 +247,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="py-16 sm:py-20">
+      <Reveal as="section" className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Documents"
@@ -253,7 +257,7 @@ export default function HomePage() {
             description="Requirements are verified before handover. Selected supercars have a higher minimum age."
             align="center"
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <Reveal stagger className="mt-10 grid gap-5 md:grid-cols-3">
             {documents.map((item, index) => (
               <article key={item.title} className="luxury-panel p-6">
                 <p className="font-display text-4xl text-gold/40">0{index + 1}</p>
@@ -261,18 +265,18 @@ export default function HomePage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="border-y border-border bg-surface py-16 sm:py-20">
+      <Reveal as="section" className="border-y border-border bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="How it works"
             title="Concierge-led booking in four steps"
             align="center"
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <article key={step.number} className="luxury-panel p-6">
                 <span className="font-display text-4xl text-gold/35">{step.number}</span>
@@ -280,11 +284,11 @@ export default function HomePage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{step.description}</p>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="py-16 sm:py-20">
+      <Reveal as="section" className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Delivery"
@@ -293,7 +297,7 @@ export default function HomePage() {
             href="/locations"
             cta="View all delivery areas"
           />
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {locations.slice(0, 12).map((location) => (
               <Link
                 key={location.name}
@@ -307,13 +311,13 @@ export default function HomePage() {
                 </span>
               </Link>
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
       <Reviews />
 
-      <section className="py-16 sm:py-20">
+      <Reveal as="section" className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Journal"
@@ -321,15 +325,15 @@ export default function HomePage() {
             href="/blog"
             cta="View all articles"
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <Reveal stagger className="mt-10 grid gap-6 lg:grid-cols-3">
             {posts.map((post) => (
               <BlogCard key={post.slug} post={post} heading="h3" />
             ))}
-          </div>
+          </Reveal>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="border-y border-border bg-surface py-16 sm:py-20">
+      <Reveal as="section" className="border-y border-border bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="FAQ"
@@ -345,9 +349,9 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="py-16 sm:py-24">
+      <Reveal as="section" className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">
@@ -377,7 +381,7 @@ export default function HomePage() {
           </div>
           <EnquiryForm />
         </div>
-      </section>
+      </Reveal>
     </>
   );
 }

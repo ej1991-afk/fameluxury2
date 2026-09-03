@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { Reveal } from "@/components/Reveal";
 import { brandToSlug, getBrandDescription } from "@/lib/brands";
 import { cars, getAllBrands } from "@/lib/cars";
 
@@ -16,7 +17,7 @@ export default function BrandsPage() {
   return (
     <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             Brands
           </p>
@@ -27,9 +28,9 @@ export default function BrandsPage() {
             From Italian supercars to British grand tourers and German
             performance — explore our curated selection.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {brands.map((brand) => {
             const brandCars = cars.filter((c) => c.brand === brand);
             const slug = brandToSlug(brand);
@@ -80,7 +81,7 @@ export default function BrandsPage() {
               </Link>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </div>
   );

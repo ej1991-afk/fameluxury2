@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BlogCard } from "@/components/BlogCard";
 import { BlogFilter } from "@/components/BlogFilter";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import {
   categoryLabels,
   categorySeo,
@@ -133,7 +134,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             Fame Luxury Blog
           </p>
@@ -141,10 +142,12 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             {heading}
           </h1>
           <p className="mt-4 text-muted">{intro}</p>
-        </div>
+        </Reveal>
 
         {!activeCategory && (
-          <nav
+          <Reveal
+            stagger
+            as="nav"
             aria-label="Popular rental topics"
             className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
           >
@@ -160,7 +163,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 <span className="mt-1 block text-xs text-muted">{topic.detail}</span>
               </Link>
             ))}
-          </nav>
+          </Reveal>
         )}
 
         <div className="relative z-20 mt-8">
@@ -168,16 +171,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
 
         {!activeCategory && featured && (
-          <div className="mt-8">
+          <Reveal className="mt-8">
             <BlogCard post={featured} featured />
-          </div>
+          </Reveal>
         )}
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal stagger className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {listPosts.map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
-        </div>
+        </Reveal>
 
         {posts.length === 0 && (
           <p className="mt-12 text-center text-muted">
@@ -187,7 +190,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </p>
         )}
 
-        <section className="mt-14 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <Reveal
+          as="section"
+          className="mt-14 rounded-2xl border border-border bg-surface p-6 sm:p-8"
+        >
           <h2 className="text-lg font-bold">
             Ready to rent a luxury car in Dubai?
           </h2>
@@ -214,7 +220,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               WhatsApp concierge
             </a>
           </div>
-        </section>
+        </Reveal>
       </div>
     </div>
   );

@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { CarImage } from "@/components/CarImage";
-import { IconWhatsApp } from "@/components/Icons";
+import {
+  IconAwd,
+  IconGauge,
+  IconSeats,
+  IconSpeed,
+  IconWhatsApp,
+} from "@/components/Icons";
 import { categoryLabels } from "@/lib/cars";
 import { whatsappCarUrl } from "@/lib/site";
 import type { Car } from "@/lib/types";
@@ -25,6 +31,25 @@ export function FleetCard({ car, compact = false }: FleetCardProps) {
       addToCompare(car.id);
     }
   }
+
+  const specs = [
+    {
+      icon: IconGauge,
+      label: `${car.specs.horsepower} hp`,
+    },
+    {
+      icon: IconSpeed,
+      label: car.specs.acceleration.replace("0-100 km/h ", "0–100 "),
+    },
+    {
+      icon: IconAwd,
+      label: car.specs.drive,
+    },
+    {
+      icon: IconSeats,
+      label: `${car.specs.seats} seats`,
+    },
+  ];
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:gold-glow">
@@ -56,15 +81,13 @@ export function FleetCard({ car, compact = false }: FleetCardProps) {
           </h3>
         </Link>
 
-        <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-muted">
-          <span>{car.specs.horsepower} hp</span>
-          <span>{car.specs.acceleration.replace("0-100 km/h ", "0–100 ")}</span>
-          {!compact ? (
-            <>
-              <span>{car.specs.drive}</span>
-              <span>{car.specs.seats} seats</span>
-            </>
-          ) : null}
+        <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-muted">
+          {(compact ? specs.slice(0, 2) : specs).map((spec) => (
+            <span key={spec.label} className="inline-flex items-center gap-1.5">
+              <spec.icon className="h-3.5 w-3.5 shrink-0 text-gold" />
+              {spec.label}
+            </span>
+          ))}
         </div>
 
         <div className="mt-auto flex items-end justify-between pt-4">

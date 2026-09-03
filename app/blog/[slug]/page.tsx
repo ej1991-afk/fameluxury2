@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BlogCard } from "@/components/BlogCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import {
   blogPosts,
   categoryLabels,
@@ -122,7 +123,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={crumbs.slice(1)} />
 
-        <header className="mt-6">
+        <Reveal as="header" className="mt-6">
           <div className="flex flex-wrap items-center gap-3 text-xs text-muted">
             <Link
               href={`/blog?category=${post.category}`}
@@ -155,9 +156,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="mt-4 text-lg leading-relaxed text-muted">{post.excerpt}</p>
 
           <p className="mt-4 text-sm text-muted">By {post.author}</p>
-        </header>
+        </Reveal>
 
-        <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border">
+        <Reveal className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border">
           <Image
             src={resolveImageSrc(post.image)}
             alt={post.imageAlt ?? post.title}
@@ -166,15 +167,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             priority
             sizes="(max-width: 768px) 100vw, 768px"
           />
-        </div>
+        </Reveal>
 
-        <div className="blog-content mt-10">
+        <Reveal className="blog-content mt-10">
           {post.content.map((block, i) => (
             <ContentBlock key={i} block={block} />
           ))}
-        </div>
+        </Reveal>
 
-        <nav
+        <Reveal
+          as="nav"
           aria-label="Related resources"
           className="mt-10 flex flex-wrap gap-3 text-sm"
         >
@@ -202,9 +204,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Link href="/blog" className="text-gold underline-offset-4 hover:underline">
             All guides
           </Link>
-        </nav>
+        </Reveal>
 
-        <div className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
+        <Reveal className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
           <h2 className="text-lg font-bold">
             Rent a luxury car in Dubai with Fame Luxury
           </h2>
@@ -230,21 +232,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Chat on WhatsApp
             </a>
           </div>
-        </div>
+        </Reveal>
 
         {related.length > 0 && (
           <section className="mt-14">
-            <h2 className="font-display text-2xl font-semibold tracking-tight">
-              Related guides
-            </h2>
-            <p className="mt-2 text-sm text-muted">
-              Keep planning your Dubai luxury car rental with these articles.
-            </p>
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal>
+              <h2 className="font-display text-2xl font-semibold tracking-tight">
+                Related guides
+              </h2>
+              <p className="mt-2 text-sm text-muted">
+                Keep planning your Dubai luxury car rental with these articles.
+              </p>
+            </Reveal>
+            <Reveal stagger className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((item) => (
                 <BlogCard key={item.slug} post={item} heading="h3" />
               ))}
-            </div>
+            </Reveal>
           </section>
         )}
       </div>

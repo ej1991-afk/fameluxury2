@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CarImage } from "@/components/CarImage";
 import { useCompare } from "@/components/CompareProvider";
+import { Reveal } from "@/components/Reveal";
 import { categoryLabels, getCarById } from "@/lib/cars";
 import { whatsappUrl } from "@/lib/site";
 
@@ -14,7 +15,7 @@ export default function ComparePage() {
 
   if (cars.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center px-4 py-24 text-center">
+      <Reveal className="flex flex-col items-center justify-center px-4 py-24 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight">Compare Vehicles</h1>
         <p className="mt-4 max-w-md text-muted">
           Add up to 3 vehicles from the fleet to compare specs and pricing side
@@ -26,7 +27,7 @@ export default function ComparePage() {
         >
           Browse Fleet
         </Link>
-      </div>
+      </Reveal>
     );
   }
 
@@ -46,7 +47,7 @@ export default function ComparePage() {
   return (
     <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               Compare Vehicles
@@ -62,9 +63,9 @@ export default function ComparePage() {
           >
             Clear all
           </button>
-        </div>
+        </Reveal>
 
-        <div className="mt-8 overflow-x-auto rounded-xl border border-border">
+        <Reveal className="mt-8 overflow-x-auto rounded-xl border border-border">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
               <tr className="border-b border-border bg-surface">
@@ -100,9 +101,9 @@ export default function ComparePage() {
               ))}
             </tbody>
           </table>
-        </div>
+        </Reveal>
 
-        <div className="mt-8 text-center">
+        <Reveal className="mt-8 text-center">
           <a
             href={whatsappUrl("Hi Fame Luxury! I'd like to compare these vehicles and check availability.")}
             target="_blank"
@@ -111,7 +112,7 @@ export default function ComparePage() {
           >
             Enquire on WhatsApp
           </a>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

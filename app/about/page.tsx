@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
 export const metadata = {
@@ -35,7 +36,7 @@ export default function AboutPage() {
   return (
     <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             About Us
           </p>
@@ -48,9 +49,12 @@ export default function AboutPage() {
             journeys with a fleet of high-end supercars, exotic cars, luxury
             SUVs, convertibles, and executive sedans.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+        <Reveal
+          stagger
+          className="mt-12 grid gap-4 sm:grid-cols-3"
+        >
           {[
             { value: siteConfig.stats.vehicles, label: "Listed Vehicles" },
             { value: `${siteConfig.stats.brands}+`, label: "Luxury Brands" },
@@ -64,9 +68,9 @@ export default function AboutPage() {
               <p className="mt-1 text-sm text-muted">{stat.label}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <Reveal stagger className="mt-16 grid gap-6 sm:grid-cols-2">
           {values.map((item) => (
             <div
               key={item.title}
@@ -78,9 +82,9 @@ export default function AboutPage() {
               </p>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="mt-16 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <Reveal className="mt-16 rounded-2xl border border-border bg-surface p-6 sm:p-8">
           <h2 className="text-xl font-bold">Company details</h2>
           <dl className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
@@ -101,9 +105,9 @@ export default function AboutPage() {
               </div>
             ))}
           </dl>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 text-center">
+        <Reveal className="mt-12 text-center">
           <a
             href={whatsappUrl()}
             target="_blank"
@@ -117,7 +121,7 @@ export default function AboutPage() {
               Or browse our fleet &rarr;
             </Link>
           </p>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

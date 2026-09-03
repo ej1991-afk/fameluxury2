@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import {
   getLocationBySlug,
@@ -58,28 +59,30 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={crumbs.slice(1)} />
 
-        <p className="mt-6 text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
-          Delivery area
-        </p>
-        <h1 className="font-display mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Luxury car rental in {location.name}
-        </h1>
-        <p className="mt-4 text-lg text-muted">
-          {location.longDescription ?? location.description}
-        </p>
+        <Reveal className="mt-6">
+          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
+            Delivery area
+          </p>
+          <h1 className="font-display mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Luxury car rental in {location.name}
+          </h1>
+          <p className="mt-4 text-lg text-muted">
+            {location.longDescription ?? location.description}
+          </p>
+        </Reveal>
 
         {location.highlights && (
-          <ul className="mt-8 space-y-3">
+          <Reveal as="ul" stagger className="mt-8 space-y-3">
             {location.highlights.map((item) => (
               <li key={item} className="flex gap-2 text-muted">
                 <span className="text-gold">✓</span>
                 {item}
               </li>
             ))}
-          </ul>
+          </Reveal>
         )}
 
-        <div className="mt-10 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <Reveal className="mt-10 rounded-2xl border border-border bg-surface p-6 sm:p-8">
           <h2 className="text-lg font-bold">
             Book {location.name} delivery with {siteConfig.name}
           </h2>
@@ -106,10 +109,10 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
               Browse fleet
             </Link>
           </div>
-        </div>
+        </Reveal>
 
         {related.length > 0 && (
-          <section className="mt-12">
+          <Reveal as="section" className="mt-12">
             <h2 className="text-lg font-bold">Other Dubai delivery areas</h2>
             <ul className="mt-4 flex flex-wrap gap-3">
               {related.map((item) => (
@@ -123,7 +126,7 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
                 </li>
               ))}
             </ul>
-          </section>
+          </Reveal>
         )}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
+import { Reveal } from "@/components/Reveal";
 import { faqItems } from "@/lib/faq";
 import { faqJsonLd } from "@/lib/seo";
 import { whatsappUrl } from "@/lib/site";
@@ -16,7 +17,7 @@ export default function FAQPage() {
     <div className="py-10 sm:py-16">
       <JsonLd data={faqJsonLd()} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <Reveal className="text-center">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             FAQ
           </p>
@@ -27,13 +28,13 @@ export default function FAQPage() {
             Direct answers about delivery, documents, deposits, rental plans,
             and self-drive booking in Dubai.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal className="mt-10">
           <FAQ items={faqItems} />
-        </div>
+        </Reveal>
 
-        <div className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
+        <Reveal className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
           <h2 className="text-lg font-bold">Still have questions?</h2>
           <p className="mt-2 text-sm text-muted">
             Our concierge team is ready to help on WhatsApp.
@@ -46,7 +47,7 @@ export default function FAQPage() {
           >
             Chat on WhatsApp
           </a>
-        </div>
+        </Reveal>
       </div>
     </div>
   );
