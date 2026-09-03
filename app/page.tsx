@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BrandMarquee } from "@/components/BrandMarquee";
-import { CategoryShowcase } from "@/components/CategoryShowcase";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { FAQ } from "@/components/FAQ";
+import { FleetCard } from "@/components/FleetCard";
 import {
   IconCar,
   IconCheck,
@@ -18,7 +18,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reviews } from "@/components/Reviews";
 import { SectionHeader } from "@/components/SectionHeader";
 import { BlogCard } from "@/components/BlogCard";
-import { homepageCategories } from "@/lib/categories";
+import { cars, getFeaturedCars } from "@/lib/cars";
 import { faqItems } from "@/lib/faq";
 import { getAllPosts } from "@/lib/blog";
 import { getCarImage, heroImage } from "@/lib/images";
@@ -26,6 +26,12 @@ import { locations } from "@/lib/locations";
 import { faqJsonLd } from "@/lib/seo";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
+function getHomepageFeaturedCars(limit = 8) {
+  const featured = getFeaturedCars();
+  if (featured.length >= limit) return featured.slice(0, limit);
+  const rest = cars.filter((car) => !car.featured);
+  return [...featured, ...rest].slice(0, limit);
+}
 const trustBadges = [
   { icon: IconShield, label: "No deposit on selected models" },
   { icon: IconDelivery, label: "Free Dubai hotel & airport delivery" },
@@ -188,9 +194,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {homepageCategories.map((section) => (
-        <CategoryShowcase key={section.title} section={section} />
-      ))}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Our collection"
+            title="Featured fleet"
+            description="A curated selection of Ferrari, Lamborghini, Rolls-Royce, Porsche, and luxury SUVs available for self-drive rental across Dubai."
+            href="/fleet"
+            cta="View full fleet"
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {getHomepageFeaturedCars().map((car) => (
+              <FleetCard key={car.id} car={car} compact />
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="border-y border-border bg-surface py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
