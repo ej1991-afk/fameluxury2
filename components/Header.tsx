@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconPhone } from "@/components/Icons";
+import { CurrencySwitcher } from "@/components/CurrencySwitcher";
 import { Logo } from "@/components/Logo";
-import { siteConfig } from "@/lib/site";
 import { useCompare } from "./CompareProvider";
 
 const navLinks = [
@@ -24,7 +23,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-xl safe-top">
       <div className="gold-hairline" />
-      <div className="mx-auto flex min-h-[5.75rem] max-w-7xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
+      <div className="mx-auto flex min-h-[5.75rem] max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
         <Logo />
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
@@ -58,14 +57,8 @@ export function Header() {
           </Link>
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gold"
-          >
-            <IconPhone className="h-4 w-4" />
-            {siteConfig.phone}
-          </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <CurrencySwitcher />
           <Link
             href="/fleet"
             className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-90"
@@ -74,7 +67,9 @@ export function Header() {
           </Link>
         </div>
 
-        <div className="h-12 w-12 shrink-0 lg:hidden" aria-hidden="true" />
+        <div className="flex items-center md:hidden">
+          <CurrencySwitcher className="mr-16" />
+        </div>
       </div>
     </header>
   );

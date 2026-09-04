@@ -4,11 +4,13 @@ import Link from "next/link";
 import { CarImage } from "@/components/CarImage";
 import { useCompare } from "@/components/CompareProvider";
 import { Reveal } from "@/components/Reveal";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { categoryLabels, getCarById } from "@/lib/cars";
 import { whatsappUrl } from "@/lib/site";
 
 export default function ComparePage() {
   const { compareIds, removeFromCompare, clearCompare } = useCompare();
+  const { format } = useCurrency();
   const cars = compareIds
     .map((id) => getCarById(id))
     .filter((car): car is NonNullable<typeof car> => car !== undefined);
@@ -34,7 +36,7 @@ export default function ComparePage() {
   const specRows = [
     { label: "Brand", get: (c: (typeof cars)[0]) => c.brand },
     { label: "Category", get: (c: (typeof cars)[0]) => categoryLabels[c.category] },
-    { label: "Price / day", get: (c: (typeof cars)[0]) => `AED ${c.pricePerDay.toLocaleString()}` },
+    { label: "Price / day", get: (c: (typeof cars)[0]) => format(c.pricePerDay) },
     { label: "Horsepower", get: (c: (typeof cars)[0]) => `${c.specs.horsepower} hp` },
     { label: "0-100", get: (c: (typeof cars)[0]) => c.specs.acceleration },
     { label: "Drive", get: (c: (typeof cars)[0]) => c.specs.drive },

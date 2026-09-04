@@ -375,10 +375,9 @@ img[data-nimg="fill"] {
   justify-content: center;
   overflow: hidden;
   width: 100%;
-  min-height: 10.5rem;
-  padding: 1.5rem 1.25rem;
+  min-height: 4.25rem;
+  padding: 0.75rem 0.65rem;
   text-align: center;
-  border-bottom: 1px solid rgba(38, 38, 38, 0.9);
   background: linear-gradient(
     165deg,
     rgba(42, 36, 30, 0.55) 0%,
@@ -409,43 +408,56 @@ img[data-nimg="fill"] {
 
 .brand-logo-card-image-slot {
   display: flex;
-  height: 5rem;
+  height: 2.25rem;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 
-@media (min-width: 640px) {
-  .brand-logo-card-image-slot {
-    height: 6rem;
-  }
-}
-
 .brand-logo-card-image {
   width: auto !important;
   height: auto !important;
-  max-height: 5rem;
-  max-width: 9.5rem;
+  max-height: 2.25rem;
+  max-width: 5.5rem;
   object-fit: contain;
   opacity: 0.96;
   filter: brightness(0) saturate(100%) invert(72%) sepia(28%) saturate(620%)
     hue-rotate(6deg) brightness(92%) contrast(90%)
-    drop-shadow(0 0 16px rgba(197, 160, 89, 0.18));
-}
-
-@media (min-width: 640px) {
-  .brand-logo-card-image {
-    max-height: 6rem;
-  }
+    drop-shadow(0 0 12px rgba(197, 160, 89, 0.16));
 }
 
 .brand-logo-card-name {
-  margin-top: 1rem;
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .brand-logo-card {
+    min-height: 10.5rem;
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid rgba(38, 38, 38, 0.9);
+  }
+
+  .brand-logo-card-image-slot {
+    height: 6rem;
+  }
+
+  .brand-logo-card-image {
+    max-height: 6rem;
+    max-width: 9.5rem;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(28%) saturate(620%)
+      hue-rotate(6deg) brightness(92%) contrast(90%)
+      drop-shadow(0 0 16px rgba(197, 160, 89, 0.18));
+  }
+
+  .brand-logo-card-name {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
 }
 

@@ -30,7 +30,10 @@ export default function BrandsPage() {
           </p>
         </Reveal>
 
-        <Reveal stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal
+          stagger
+          className="mt-8 grid grid-cols-3 gap-2 sm:grid-cols-4 md:mt-10 md:grid-cols-2 md:gap-5 lg:grid-cols-3"
+        >
           {brands.map((brand) => {
             const brandCars = cars.filter((c) => c.brand === brand);
             const slug = brandToSlug(brand);
@@ -38,13 +41,14 @@ export default function BrandsPage() {
               <Link
                 key={brand}
                 href={`/fleet?brand=${slug}`}
-                className="group relative flex min-h-72 flex-col overflow-hidden rounded-xl border border-[#262626] bg-[#0d0d0d] transition-[border-color,box-shadow] duration-300 hover:border-gold/35 hover:shadow-[0_16px_48px_rgba(0,0,0,0.35)]"
+                aria-label={`Rent ${brand} in Dubai`}
+                className="group relative flex flex-col overflow-hidden rounded-lg border border-[#262626] bg-[#0d0d0d] transition-[border-color,box-shadow] duration-300 hover:border-gold/35 hover:shadow-[0_16px_48px_rgba(0,0,0,0.35)] md:min-h-72 md:rounded-xl"
               >
                 <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-gold/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
                 <BrandLogo brand={brand} />
 
-                <span className="flex flex-1 flex-col p-5">
+                <span className="hidden flex-1 flex-col p-5 md:flex">
                   <h2 className="text-xl font-extrabold leading-tight">
                     Rent {brand} in Dubai
                   </h2>

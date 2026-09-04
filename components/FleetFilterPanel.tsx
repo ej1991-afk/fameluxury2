@@ -11,6 +11,7 @@ import {
   type ReactNode,
 } from "react";
 import { IconChevron, IconClose, IconMenu } from "@/components/Icons";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { categoryLabels, getAllBrands } from "@/lib/cars";
 import {
   brandToSlug,
@@ -96,6 +97,7 @@ export function FleetFilterPanel({
   const [search, setSearch] = useState(query.q ?? "");
   const queryRef = useRef(query);
   queryRef.current = query;
+  const { format, currency } = useCurrency();
 
   useEffect(() => {
     setSearch(query.q ?? "");
@@ -153,6 +155,13 @@ export function FleetFilterPanel({
   const activeBrandLabel = query.brand
     ? brands.find((brand) => brandToSlug(brand) === query.brand)
     : undefined;
+  const activePriceSummary = activePriceBand
+    ? activePriceBand.min != null && activePriceBand.max != null
+      ? `${format(activePriceBand.min)} – ${format(activePriceBand.max)}`
+      : activePriceBand.min != null
+        ? `${format(activePriceBand.min)}+`
+        : `Up to ${format(activePriceBand.max!)}`
+    : "Any rate";
 
   function filtersBody() {
     return (
@@ -194,33 +203,40 @@ export function FleetFilterPanel({
         <FilterAccordion
           title="Daily rate"
           defaultOpen={Boolean(query.price)}
-          summary={
-            activePriceBand ? `AED ${activePriceBand.label}` : "Any rate"
-          }
+          summary={activePriceSummary}
         >
           <div className="grid gap-2">
-            {priceBands.map((band) => (
-              <button
-                key={band.id}
-                type="button"
-                onClick={() =>
-                  go({
-                    ...query,
-                    price: query.price === band.id ? undefined : band.id,
-                  })
-                }
-                className={optionClass(query.price === band.id)}
-              >
-                <span>
-                  <span className="block font-medium text-foreground">
-                    AED {band.label}
+            {priceBands.map((band) => {
+              const label =
+                band.min != null && band.max != null
+                  ? `${format(band.min)} – ${format(band.max)}`
+                  : band.min != null
+                    ? `${format(band.min)}+`
+                    : `Up to ${format(band.max!)}`;
+              return (
+                <button
+                  key={band.id}
+                  type="button"
+                  onClick={() =>
+                    go({
+                      ...query,
+                      price: query.price === band.id ? undefined : band.id,
+                    })
+                  }
+                  className={optionClass(query.price === band.id)}
+                >
+                  <span>
+                    <span className="block font-medium text-foreground">
+                      {label}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-muted">
+                      {band.hint}
+                      {currency !== "AED" ? " · guide rate" : ""}
+                    </span>
                   </span>
-                  <span className="mt-0.5 block text-xs text-muted">
-                    {band.hint}
-                  </span>
-                </span>
-              </button>
-            ))}
+                </button>
+              );
+            })}
           </div>
         </FilterAccordion>
 
@@ -381,7 +397,7 @@ export function FleetFilterPanel({
                 href={fleetHref(chip.clear)}
                 className="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-gold"
               >
-                {chip.label}
+                {chip.key === "price" ? activePriceSummary : chip.label}
                 <IconClose className="h-3 w-3" />
               </Link>
             ))}

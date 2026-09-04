@@ -6,6 +6,7 @@ import { CompareButton } from "@/components/CompareButton";
 import { FleetCard } from "@/components/FleetCard";
 import { IconAwd, IconCheck, IconGauge, IconSeats, IconSpeed, IconWhatsApp } from "@/components/Icons";
 import { JsonLd } from "@/components/JsonLd";
+import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
 import { categoryLabels, cars, getCarBySlug, getCarsByBrand } from "@/lib/cars";
 import { vehicleJsonLd } from "@/lib/seo";
@@ -90,11 +91,13 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
             <div className="luxury-panel mt-6 p-5">
               <p className="text-sm text-muted">Starting from</p>
               <p className="text-3xl font-extrabold text-gold">
-                AED {car.pricePerDay.toLocaleString()}
-                <span className="text-base font-normal text-muted"> /day</span>
+                <Price
+                  amountAed={car.pricePerDay}
+                  suffixClassName="text-base font-normal text-muted"
+                />
               </p>
               <p className="mt-1 text-xs text-muted">
-                Weekly and monthly rates available — confirm on WhatsApp.
+                Guide rates shown — final booking confirmed in AED on WhatsApp.
               </p>
             </div>
 

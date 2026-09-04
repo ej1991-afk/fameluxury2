@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { CompareProvider } from "@/components/CompareProvider";
+import { CurrencyProvider } from "@/components/CurrencyProvider";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -98,10 +99,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd data={websiteJsonLd()} />
         <MobileNav />
         <CompareProvider>
-          <Header />
-          <main className="flex-1 pb-24 md:pb-0">{children}</main>
-          <Footer />
-          <WhatsAppButton />
+          <CurrencyProvider>
+            <Header />
+            <main className="flex-1 pb-24 md:pb-0">{children}</main>
+            <Footer />
+            <WhatsAppButton />
+          </CurrencyProvider>
         </CompareProvider>
       </body>
     </html>

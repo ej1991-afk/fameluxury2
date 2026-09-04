@@ -9,6 +9,7 @@ import {
   IconSpeed,
   IconWhatsApp,
 } from "@/components/Icons";
+import { Price } from "@/components/Price";
 import { categoryLabels } from "@/lib/cars";
 import { whatsappCarUrl } from "@/lib/site";
 import type { Car } from "@/lib/types";
@@ -94,8 +95,7 @@ export function FleetCard({ car, compact = false }: FleetCardProps) {
           <div>
             <p className="text-[0.65rem] uppercase tracking-widest text-muted">from</p>
             <p className="text-xl font-bold text-gold">
-              AED {car.pricePerDay.toLocaleString()}
-              <span className="text-xs font-normal text-muted"> /day</span>
+              <Price amountAed={car.pricePerDay} />
             </p>
           </div>
         </div>
