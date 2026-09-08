@@ -24,6 +24,9 @@ const cormorant = Cormorant_Garamond({
   weight: ["500", "600", "700"],
 });
 
+const metaDomainVerification =
+  process.env.NEXT_PUBLIC_META_DOMAIN_VERIFICATION?.trim();
+
 export const metadata: Metadata = {
   title: {
     default: "Luxury Car Rental Dubai | Supercars & Self-Drive | Fame Luxury",
@@ -32,6 +35,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: defaultKeywords,
   metadataBase: new URL(siteConfig.url),
+  ...(metaDomainVerification
+    ? {
+        other: {
+          "facebook-domain-verification": metaDomainVerification,
+        },
+      }
+    : {}),
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.legalEntity }],
   creator: siteConfig.name,

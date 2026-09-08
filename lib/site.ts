@@ -10,7 +10,7 @@ export const siteConfig = {
   tagline: "Drive famous, live luxury",
   description:
     "Luxury car rental Dubai with self-drive supercars, convertibles, and SUVs. Free concierge delivery to hotels, residences, and DXB. Enquire on WhatsApp.",
-  url: "https://fameluxurycarrental.ae",
+  url: "https://fameluxurycarsdubai.com",
   phone: "+971 56 555 5352",
   phoneRaw: "971565555352",
   landline: "(04) 388 3411",

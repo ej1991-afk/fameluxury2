@@ -18,7 +18,7 @@ const week1 = [
   "Copy the GBP share link and Write-a-review link into .env.local",
   "Create Google Analytics 4 property and set NEXT_PUBLIC_GA_MEASUREMENT_ID",
   "Verify domain in Google Search Console",
-  "Submit https://fameluxurycarrental.ae/sitemap.xml in Search Console",
+  "Submit https://fameluxurycarsdubai.com/sitemap.xml in Search Console",
 ];
 
 const ongoing = [
@@ -81,6 +81,8 @@ export default function SeoChecklistPage() {
           <h2 className="text-xl font-bold">.env.local keys</h2>
           <pre className="mt-4 overflow-x-auto rounded-xl border border-border bg-surface p-4 text-xs text-muted">
 {`NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXX
+NEXT_PUBLIC_META_PIXEL_ID=123456789012345
+NEXT_PUBLIC_META_DOMAIN_VERIFICATION=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 NEXT_PUBLIC_GOOGLE_BUSINESS_URL=https://maps.google.com/?cid=...
 NEXT_PUBLIC_GOOGLE_REVIEW_URL=https://search.google.com/local/writereview?placeid=...
 NEXT_PUBLIC_GOOGLE_RATING=4.9

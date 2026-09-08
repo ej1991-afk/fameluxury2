@@ -6,6 +6,7 @@ import { CompareButton } from "@/components/CompareButton";
 import { FleetCard } from "@/components/FleetCard";
 import { IconAwd, IconCheck, IconGauge, IconSeats, IconSpeed, IconWhatsApp } from "@/components/Icons";
 import { JsonLd } from "@/components/JsonLd";
+import { MetaViewContent } from "@/components/MetaViewContent";
 import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
 import { categoryLabels, cars, getCarBySlug, getCarsByBrand } from "@/lib/cars";
@@ -55,6 +56,11 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
   return (
     <div className="py-10 sm:py-16">
       <JsonLd data={vehicleJsonLd(car)} />
+      <MetaViewContent
+        contentId={car.id}
+        contentName={fullName}
+        value={car.pricePerDay}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs
           items={[

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/components/Analytics";
 import { getAllBrands } from "@/lib/cars";
 import { whatsappUrl } from "@/lib/site";
 import { IconWhatsApp } from "@/components/Icons";
@@ -23,6 +24,10 @@ export function EnquiryForm({ compact = false }: { compact?: boolean }) {
       from && `From: ${from}`,
       to && `To: ${to}`,
     ].filter(Boolean);
+    trackEvent("lead", {
+      event_category: "engagement",
+      event_label: brand || "enquiry_form",
+    });
     // Prefer same-tab navigation on mobile so WhatsApp can open the chat
     window.location.href = whatsappUrl(lines.join("\n"));
   }
