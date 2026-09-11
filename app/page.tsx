@@ -235,7 +235,7 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
             <Image
-              src={getCarImage("mercedes-g63-amg")}
+              src={getCarImage("mercedes-g63-white")}
               alt="Mercedes-AMG G63 luxury SUV rental in Dubai"
               fill
               className="object-cover"

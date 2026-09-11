@@ -8,7 +8,9 @@ export const brandLogos: Record<string, string> = {
   Bentley: "/brands/bentley.svg",
   BMW: "/brands/bmw.svg",
   Cadillac: "/brands/cadillac.svg",
+  Brabus: "/brands/brabus.svg",
   Ferrari: "/brands/ferrari.svg",
+  GMC: "/brands/gmc.svg",
   Lamborghini: "/brands/lamborghini.svg",
   "Land Rover": "/brands/land-rover.svg",
   McLaren: "/brands/mclaren.svg",
@@ -22,6 +24,8 @@ export const brandLogos: Record<string, string> = {
 export const brandDescriptions: Record<string, string> = {
   Audi:
     "Explore Audi rental Dubai for refined German comfort, luxury technology, and business-ready executive travel.",
+  Brabus:
+    "Enquire about Brabus rental Dubai for Widestar and Rocket G-Class builds with extra presence, power, and concierge handover.",
   Bentley:
     "Choose Bentley rental Dubai for grand touring comfort, convertible elegance, and prestige for events and hotel arrivals.",
   BMW:
@@ -30,6 +34,8 @@ export const brandDescriptions: Record<string, string> = {
     "Choose Cadillac rental Dubai for spacious SUV comfort, executive presence, family travel, and luxury airport handover.",
   Ferrari:
     "Explore Ferrari rental Dubai for Italian performance, open-top emotion, and unmistakable supercar presence.",
+  GMC:
+    "Choose GMC Yukon Denali rental Dubai for seven-seat luxury, family travel, and hotel or airport handover.",
   Lamborghini:
     "Enquire about Lamborghini rental Dubai for dramatic design, high-performance engineering, and road presence built to impress.",
   "Land Rover":

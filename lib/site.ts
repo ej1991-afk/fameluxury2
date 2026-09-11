@@ -40,8 +40,8 @@ export const siteConfig = {
   whatsappMessage:
     "Hi Fame Luxury! I'd like to enquire about a luxury car rental in Dubai.",
   stats: {
-    vehicles: 24,
-    brands: 12,
+    vehicles: 17,
+    brands: 6,
     deliveryAreas: 15,
   },
 };
