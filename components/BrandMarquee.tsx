@@ -12,20 +12,21 @@ export function BrandMarquee() {
       aria-label="Luxury car brands available for rent in Dubai"
       className="overflow-hidden border-y border-border bg-surface py-6"
     >
-      <div className="marquee-track flex w-max items-center gap-10 px-6">
+      <div className="marquee-track flex w-max items-center gap-12 px-8">
         {loop.map((brand, index) => (
           <Link
             key={`${brand}-${index}`}
             href={`/fleet?brand=${brandToSlug(brand)}`}
-            className="flex shrink-0 items-center gap-3 opacity-80 transition-opacity hover:opacity-100"
+            className="inline-flex h-8 shrink-0 items-center opacity-80 transition-opacity hover:opacity-100"
           >
             <Image
               src={brandLogos[brand]}
               alt={`${brand} rental Dubai`}
-              width={112}
-              height={40}
+              width={80}
+              height={32}
               unoptimized
-              className="h-8 w-auto object-contain brand-logo-gold"
+              className="brand-logo-gold brand-marquee-logo"
+              style={{ width: "auto", height: "2rem" }}
             />
             <span className="sr-only">Rent {brand} in Dubai</span>
           </Link>
