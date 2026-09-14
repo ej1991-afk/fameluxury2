@@ -129,7 +129,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
         </div>
 
-        <div className="relative mx-auto grid min-h-[calc(100dvh-4.25rem)] w-full max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:min-h-[calc(100dvh-4.25rem)] lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div className="max-w-2xl animate-fade-in-up">
             <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-gold">
               Dubai · Self-drive · Concierge delivery
@@ -171,7 +171,7 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="hidden lg:block">
+          <div>
             <EnquiryForm />
           </div>
         </div>

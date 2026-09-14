@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local PDF photo extracts
+.pdf-extract/
+.pdf-preview/
+
 # local logo / scratch work
 /tmp-logo-out/
 /tmp-logo.pdf
