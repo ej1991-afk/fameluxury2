@@ -163,7 +163,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             src={resolveImageSrc(post.image)}
             alt={post.imageAlt ?? post.title}
             fill
-            className="object-cover"
+            className="object-cover object-[32%_center]"
             priority
             sizes="(max-width: 768px) 100vw, 768px"
           />

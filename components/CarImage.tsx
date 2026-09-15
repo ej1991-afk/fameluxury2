@@ -12,7 +12,7 @@ interface CarImageProps {
 export function CarImage({
   car,
   priority = false,
-  className = "object-cover",
+  className = "object-cover object-[32%_center]",
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
 }: CarImageProps) {
   return (

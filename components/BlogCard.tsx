@@ -28,7 +28,7 @@ export function BlogCard({ post, featured, heading = "h2" }: BlogCardProps) {
           src={resolveImageSrc(post.image)}
           alt={post.imageAlt ?? post.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-[32%_center] transition-transform duration-500 group-hover:scale-105"
           sizes={featured ? "(max-width: 640px) 100vw, 50vw" : "(max-width: 640px) 100vw, 33vw"}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />

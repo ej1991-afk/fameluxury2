@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-15",
     updatedAt: "2026-09-03",
     readTime: 8,
-    image: "/blog/best-supercars-to-rent-in-dubai.webp",
+    image: "/blog/best-supercars-to-rent-in-dubai-left.webp",
     imageAlt: "Lamborghini Huracán EVO Spyder Black rental in Dubai",
     featured: true,
     keywords: [
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-01",
     updatedAt: "2026-09-03",
     readTime: 7,
-    image: "/blog/how-much-does-luxury-car-rental-cost-in-dubai.webp",
+    image: "/blog/how-much-does-luxury-car-rental-cost-in-dubai-left.webp",
     imageAlt: "Ferrari F8 Tributo luxury car rental in Dubai",
     featured: false,
     keywords: [
@@ -258,7 +258,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-28",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/no-deposit-luxury-car-rental-dubai.webp",
+    image: "/blog/no-deposit-luxury-car-rental-dubai-left.webp",
     imageAlt: "No deposit Mercedes-Benz G63 AMG rental in Dubai",
     keywords: [
       "no deposit car rental Dubai",
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-10",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/dubai-luxury-car-rental-documents-guide.webp",
+    image: "/blog/dubai-luxury-car-rental-documents-guide-left.webp",
     imageAlt: "Mercedes-Benz G63 AMG Black luxury rental in Dubai",
     keywords: [
       "documents to rent a car in Dubai",
@@ -498,7 +498,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-28",
     updatedAt: "2026-09-03",
     readTime: 5,
-    image: "/blog/daily-vs-weekly-luxury-car-rental-dubai.webp",
+    image: "/blog/daily-vs-weekly-luxury-car-rental-dubai-framed.webp",
     imageAlt: "Lamborghini Urus Black weekly luxury rental in Dubai",
     keywords: [
       "weekly luxury car rental Dubai",
@@ -560,7 +560,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-20",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/convertible-car-rental-dubai-guide.webp",
+    image: "/blog/convertible-car-rental-dubai-guide-framed.webp",
     imageAlt: "Lamborghini Huracán EVO Spyder Blue convertible rental in Dubai",
     keywords: [
       "convertible car rental Dubai",
@@ -623,7 +623,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-12",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/luxury-suv-rental-dubai-family-guide.webp",
+    image: "/blog/luxury-suv-rental-dubai-family-guide-left.webp",
     imageAlt: "Lamborghini Urus Gray luxury SUV rental in Dubai",
     keywords: [
       "luxury SUV rental Dubai",
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-05",
     updatedAt: "2026-09-03",
     readTime: 7,
-    image: "/blog/dubai-car-rental-speed-limits-traffic-rules.webp",
+    image: "/blog/dubai-car-rental-speed-limits-traffic-rules-framed.webp",
     imageAlt: "Lamborghini Huracán EVO Coupe Red rental driving in Dubai",
     keywords: [
       "Dubai speed limits",
@@ -755,7 +755,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-06-28",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/wedding-luxury-car-rental-dubai.webp",
+    image: "/blog/wedding-luxury-car-rental-dubai-left.webp",
     imageAlt: "Mercedes-Benz G63 AMG White wedding car rental in Dubai",
     keywords: [
       "wedding car rental Dubai",

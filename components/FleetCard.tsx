@@ -57,7 +57,7 @@ export function FleetCard({ car, compact = false }: FleetCardProps) {
       <Link href={`/fleet/${car.slug}`} className="relative block aspect-[16/10] overflow-hidden">
         <CarImage
           car={car}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-[32%_center] transition-transform duration-700 group-hover:scale-105"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20" />
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-2">

@@ -9,7 +9,7 @@ export const cars: Car[] = [
     category: "convertible",
     tagline: "2023 open-top V10",
     pricePerDay: 2499,
-    image: "/cars/lamborghini-huracan-evo-spyder-blue.webp",
+    image: "/cars/lamborghini-huracan-evo-spyder-blue-goldstudio.webp",
     specs: {
       horsepower: 610,
       acceleration: "0-100 km/h 3.5 s",
@@ -28,7 +28,7 @@ export const cars: Car[] = [
     category: "convertible",
     tagline: "2023 Nero open-top",
     pricePerDay: 2499,
-    image: "/cars/lamborghini-huracan-evo-spyder-black.webp",
+    image: "/cars/lamborghini-huracan-evo-spyder-black-goldstudio.webp",
     specs: {
       horsepower: 610,
       acceleration: "0-100 km/h 3.5 s",
@@ -46,7 +46,7 @@ export const cars: Car[] = [
     category: "supercar",
     tagline: "2022 Rosso V10 coupe",
     pricePerDay: 2199,
-    image: "/cars/lamborghini-huracan-evo-coupe-red.webp",
+    image: "/cars/lamborghini-huracan-evo-coupe-red-goldstudio.webp",
     specs: {
       horsepower: 610,
       acceleration: "0-100 km/h 3.3 s",
@@ -65,7 +65,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2021 Grigio super SUV",
     pricePerDay: 1999,
-    image: "/cars/lamborghini-urus-gray-2021.webp",
+    image: "/cars/lamborghini-urus-gray-2021-goldstudio.webp",
     specs: {
       horsepower: 650,
       acceleration: "0-100 km/h 3.6 s",
@@ -84,7 +84,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2022 silver super SUV",
     pricePerDay: 1999,
-    image: "/cars/lamborghini-urus-silver-2022.webp",
+    image: "/cars/lamborghini-urus-silver-2022-goldstudio.webp",
     specs: {
       horsepower: 650,
       acceleration: "0-100 km/h 3.6 s",
@@ -104,7 +104,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2021 Nero super SUV",
     pricePerDay: 1999,
-    image: "/cars/lamborghini-urus-black-2021.webp",
+    image: "/cars/lamborghini-urus-black-2021-goldstudio.webp",
     specs: {
       horsepower: 650,
       acceleration: "0-100 km/h 3.6 s",
@@ -124,7 +124,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 satin black G-Wagen",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-black-matte.webp",
+    image: "/cars/mercedes-g63-black-matte-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -144,7 +144,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 glossy Obsidian Black",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-black.webp",
+    image: "/cars/mercedes-g63-black-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -163,7 +163,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 full matte wrap",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-matte-black.webp",
+    image: "/cars/mercedes-g63-matte-black-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -182,7 +182,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 Selenite Grey",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-gray.webp",
+    image: "/cars/mercedes-g63-gray-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -201,7 +201,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 satin gray wrap",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-gray-matte.webp",
+    image: "/cars/mercedes-g63-gray-matte-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -220,7 +220,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2023 Polar White",
     pricePerDay: 1199,
-    image: "/cars/mercedes-g63-white.webp",
+    image: "/cars/mercedes-g63-white-goldstudio.webp",
     specs: {
       horsepower: 577,
       acceleration: "0-100 km/h 4.5 s",
@@ -240,7 +240,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2022 Widestar carbon",
     pricePerDay: 1799,
-    image: "/cars/brabus-g-blue-carbon.webp",
+    image: "/cars/brabus-g-blue-carbon-goldstudio.webp",
     specs: {
       horsepower: 800,
       acceleration: "0-100 km/h 4.1 s",
@@ -259,7 +259,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2024 900 hp G-Wagen",
     pricePerDay: 1999,
-    image: "/cars/brabus-rocket-900-gray.webp",
+    image: "/cars/brabus-rocket-900-gray-goldstudio.webp",
     specs: {
       horsepower: 900,
       acceleration: "0-100 km/h 3.7 s",
@@ -278,7 +278,7 @@ export const cars: Car[] = [
     category: "sports",
     tagline: "2024 satin GT3",
     pricePerDay: 2499,
-    image: "/cars/porsche-911-gt3-black-matte.webp",
+    image: "/cars/porsche-911-gt3-black-matte-goldstudio.webp",
     specs: {
       horsepower: 510,
       acceleration: "0-100 km/h 3.4 s",
@@ -296,7 +296,7 @@ export const cars: Car[] = [
     category: "supercar",
     tagline: "2022 Rosso Corsa",
     pricePerDay: 2399,
-    image: "/cars/ferrari-f8-tributo-red.webp",
+    image: "/cars/ferrari-f8-tributo-red-goldstudio.webp",
     specs: {
       horsepower: 720,
       acceleration: "0-100 km/h 2.9 s",
@@ -315,7 +315,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2026 Onyx Black",
     pricePerDay: 899,
-    image: "/cars/gmc-yukon-denali-black.webp",
+    image: "/cars/gmc-yukon-denali-black-goldstudio.webp",
     specs: {
       horsepower: 420,
       acceleration: "0-100 km/h 6.1 s",

@@ -233,12 +233,12 @@ export default function HomePage() {
               ))}
             </Reveal>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border sm:aspect-[4/3] lg:aspect-[4/5]">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-border">
             <Image
               src={getCarImage("mercedes-g63-white")}
               alt="Mercedes-AMG G63 luxury SUV rental in Dubai"
               fill
-              className="object-cover"
+              className="object-cover object-[32%_center]"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent" />
