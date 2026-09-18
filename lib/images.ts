@@ -30,25 +30,25 @@ export const heroImage = isCloudinaryEnabled()
   ? cloudinaryPublicId("hero")
   : "/hero.webp";
 
-/** Gold-strip luxury studio shots with DUBAI plates. */
+/** Gold-strip studio shots with Fame-logo DUBAI plates. */
 const carImageFileSlugs: Record<string, string> = {
-  "lamborghini-huracan-evo-spyder-blue": "lamborghini-huracan-evo-spyder-blue-goldstudio",
-  "lamborghini-huracan-evo-spyder-black": "lamborghini-huracan-evo-spyder-black-goldstudio",
-  "lamborghini-huracan-evo-coupe-red": "lamborghini-huracan-evo-coupe-red-goldstudio",
-  "lamborghini-urus-gray-2021": "lamborghini-urus-gray-2021-goldstudio",
-  "lamborghini-urus-silver-2022": "lamborghini-urus-silver-2022-goldstudio",
-  "lamborghini-urus-black-2021": "lamborghini-urus-black-2021-goldstudio",
-  "mercedes-g63-black-matte": "mercedes-g63-black-matte-goldstudio",
-  "mercedes-g63-black": "mercedes-g63-black-goldstudio",
-  "mercedes-g63-matte-black": "mercedes-g63-matte-black-goldstudio",
-  "mercedes-g63-gray": "mercedes-g63-gray-goldstudio",
-  "mercedes-g63-gray-matte": "mercedes-g63-gray-matte-goldstudio",
-  "mercedes-g63-white": "mercedes-g63-white-goldstudio",
-  "brabus-g-blue-carbon": "brabus-g-blue-carbon-goldstudio",
-  "brabus-rocket-900-gray": "brabus-rocket-900-gray-goldstudio",
-  "porsche-911-gt3-black-matte": "porsche-911-gt3-black-matte-goldstudio",
-  "ferrari-f8-tributo-red": "ferrari-f8-tributo-red-goldstudio",
-  "gmc-yukon-denali-black": "gmc-yukon-denali-black-goldstudio",
+  "lamborghini-huracan-evo-spyder-blue": "lamborghini-huracan-evo-spyder-blue-fameplate",
+  "lamborghini-huracan-evo-spyder-black": "lamborghini-huracan-evo-spyder-black-fameplate",
+  "lamborghini-huracan-evo-coupe-red": "lamborghini-huracan-evo-coupe-red-rocketplate",
+  "lamborghini-urus-gray-2021": "lamborghini-urus-gray-2021-fameplate",
+  "lamborghini-urus-silver-2022": "lamborghini-urus-silver-2022-fameplate",
+  "lamborghini-urus-black-2021": "lamborghini-urus-black-2021-fameplate",
+  "mercedes-g63-black-matte": "mercedes-g63-black-matte-fameplate",
+  "mercedes-g63-black": "mercedes-g63-black-fameplate",
+  "mercedes-g63-matte-black": "mercedes-g63-matte-black-fameplate",
+  "mercedes-g63-gray": "mercedes-g63-gray-fameplate",
+  "mercedes-g63-gray-matte": "mercedes-g63-gray-matte-fameplate",
+  "mercedes-g63-white": "mercedes-g63-white-fameplate",
+  "brabus-g-blue-carbon": "brabus-g-blue-carbon-fameplate",
+  "brabus-rocket-900-gray": "brabus-rocket-900-gray-fameplate",
+  "porsche-911-gt3-black-matte": "porsche-911-gt3-black-matte-fameplate",
+  "ferrari-f8-tributo-red": "ferrari-f8-tributo-red-rocketstudio",
+  "gmc-yukon-denali-black": "gmc-yukon-denali-black-rocketstudio",
 };
 
 export function getCarImage(slug: string): string {

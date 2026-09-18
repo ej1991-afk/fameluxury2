@@ -17,8 +17,8 @@ export const siteConfig = {
   landlineRaw: "97143883411",
   legalEntity: "Fame Luxury Car Rental LLC",
   email: "info@fameluxury.com",
-  address: "26th St, Al Quoz Industrial Area 2, Dubai, UAE",
-  addressStreet: "26th St, Al Quoz Industrial Area 2",
+  address: "26th St, Al Quoz Industrial Area 2, Al Quoz, Dubai, UAE",
+  addressStreet: "26th St, Al Quoz Industrial Area 2, Al Quoz",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
   addressCountry: "AE",
@@ -26,9 +26,13 @@ export const siteConfig = {
     latitude: 25.123816,
     longitude: 55.24342,
   },
+  mapsUrl: "https://maps.app.goo.gl/649hccfJBETNVKh57",
+  mapsQuery:
+    "Fame Luxury Car Rental - 26th St - Al Qouz Ind.second - Al Quoz - Dubai",
   /** Google Business Profile public page URL (set in env when you have it). */
   googleBusinessUrl:
-    process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL?.trim() || "",
+    process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL?.trim() ||
+    "https://maps.app.goo.gl/649hccfJBETNVKh57",
   /** Direct “Write a review” link from GBP. */
   googleReviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim() || "",
   /** Optional real GBP stats — only used for AggregateRating schema when both set. */
@@ -47,13 +51,12 @@ export const siteConfig = {
 };
 
 export function mapsEmbedUrl() {
-  const q = encodeURIComponent(siteConfig.address);
-  return `https://www.google.com/maps?q=${q}&z=15&output=embed`;
+  const q = encodeURIComponent(siteConfig.mapsQuery);
+  return `https://www.google.com/maps?q=${q}&z=16&output=embed`;
 }
 
 export function mapsDirectionsUrl() {
-  const q = encodeURIComponent(siteConfig.address);
-  return `https://www.google.com/maps/search/?api=1&query=${q}`;
+  return siteConfig.mapsUrl;
 }
 
 /** Digits only, country code included (e.g. 9715xxxxxxx). */

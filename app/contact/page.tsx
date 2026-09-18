@@ -87,9 +87,16 @@ export default function ContactPage() {
               <address className="mt-4 not-italic text-sm text-muted">
                 <strong className="text-foreground">{siteConfig.legalEntity}</strong>
                 <br />
-                {siteConfig.addressStreet}
-                <br />
-                {siteConfig.addressLocality}, {siteConfig.addressCountry}
+                <a
+                  href={mapsDirectionsUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold"
+                >
+                  {siteConfig.addressStreet}
+                  <br />
+                  {siteConfig.addressLocality}, {siteConfig.addressCountry}
+                </a>
                 <br />
                 <a
                   href={`mailto:${siteConfig.email}`}

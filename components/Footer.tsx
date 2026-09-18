@@ -55,10 +55,15 @@ export function Footer() {
                 <IconWhatsApp className="h-4 w-4 text-gold" />
                 WhatsApp concierge
               </a>
-              <p className="inline-flex items-start gap-2">
+              <a
+                href={siteConfig.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-start gap-2 hover:text-gold"
+              >
                 <IconPin className="mt-0.5 h-4 w-4 text-gold" />
                 {siteConfig.address}
-              </p>
+              </a>
               {siteConfig.googleReviewUrl ? (
                 <a
                   href={siteConfig.googleReviewUrl}
