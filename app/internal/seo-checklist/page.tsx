@@ -83,6 +83,7 @@ export default function SeoChecklistPage() {
 {`NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXX
 NEXT_PUBLIC_META_PIXEL_ID=123456789012345
 NEXT_PUBLIC_META_DOMAIN_VERIFICATION=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=paste-from-search-console
 NEXT_PUBLIC_GOOGLE_BUSINESS_URL=https://maps.google.com/?cid=...
 NEXT_PUBLIC_GOOGLE_REVIEW_URL=https://search.google.com/local/writereview?placeid=...
 NEXT_PUBLIC_GOOGLE_RATING=4.9

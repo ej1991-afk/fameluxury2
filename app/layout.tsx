@@ -26,6 +26,8 @@ const cormorant = Cormorant_Garamond({
 
 const metaDomainVerification =
   process.env.NEXT_PUBLIC_META_DOMAIN_VERIFICATION?.trim();
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +41,13 @@ export const metadata: Metadata = {
     ? {
         other: {
           "facebook-domain-verification": metaDomainVerification,
+        },
+      }
+    : {}),
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification,
         },
       }
     : {}),
