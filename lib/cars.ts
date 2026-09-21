@@ -65,7 +65,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2021 Grigio super SUV",
     pricePerDay: 1999,
-    image: "/cars/lamborghini-urus-gray-2021-fameplate.webp",
+    image: "/cars/lamborghini-urus-gray-2021-gunmetal.webp",
     specs: {
       horsepower: 650,
       acceleration: "0-100 km/h 3.6 s",
@@ -84,7 +84,7 @@ export const cars: Car[] = [
     category: "suv",
     tagline: "2022 silver super SUV",
     pricePerDay: 1999,
-    image: "/cars/lamborghini-urus-silver-2022-fameplate.webp",
+    image: "/cars/lamborghini-urus-silver-2022-grigio.webp",
     specs: {
       horsepower: 650,
       acceleration: "0-100 km/h 3.6 s",
