@@ -72,6 +72,7 @@ export interface BlogPost {
   readTime: number;
   image: string;
   imageAlt?: string;
+  relatedCarSlugs?: string[];
   featured?: boolean;
   keywords: string[];
   content: BlogContentBlock[];

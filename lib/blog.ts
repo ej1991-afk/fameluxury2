@@ -1,4 +1,5 @@
-import type { BlogCategory, BlogPost } from "./types";
+import { getCarBySlug } from "./cars";
+import type { BlogCategory, BlogPost, Car } from "./types";
 
 export const categoryLabels: Record<BlogCategory, string> = {
   guides: "Guides",
@@ -50,8 +51,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-15",
     updatedAt: "2026-09-03",
     readTime: 8,
-    image: "/blog/best-supercars-to-rent-in-dubai-left.webp",
+    image: "/cars/lamborghini-huracan-evo-spyder-black.webp",
     imageAlt: "Lamborghini Huracán EVO Spyder Black rental in Dubai",
+    relatedCarSlugs: [
+      "lamborghini-huracan-evo-spyder-black",
+      "ferrari-f8-tributo-red",
+      "porsche-911-gt3-black-matte",
+    ],
     featured: true,
     keywords: [
       "best supercars to rent in Dubai",
@@ -164,8 +170,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-09-01",
     updatedAt: "2026-09-03",
     readTime: 7,
-    image: "/blog/how-much-does-luxury-car-rental-cost-in-dubai-left.webp",
+    image: "/cars/ferrari-f8-tributo-red.webp",
     imageAlt: "Ferrari F8 Tributo luxury car rental in Dubai",
+    relatedCarSlugs: [
+      "ferrari-f8-tributo-red",
+      "lamborghini-huracan-evo-coupe-red",
+      "brabus-rocket-900-gray",
+    ],
     featured: false,
     keywords: [
       "luxury car rental Dubai price",
@@ -258,8 +269,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-28",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/no-deposit-luxury-car-rental-dubai-left.webp",
+    image: "/cars/mercedes-g63-gray.webp",
     imageAlt: "No deposit Mercedes-Benz G63 AMG rental in Dubai",
+    relatedCarSlugs: [
+      "mercedes-g63-gray",
+      "lamborghini-urus-gray-2021",
+      "gmc-yukon-denali-black",
+    ],
     keywords: [
       "no deposit car rental Dubai",
       "no deposit luxury car rental Dubai",
@@ -331,8 +347,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-10",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/dubai-luxury-car-rental-documents-guide-left.webp",
+    image: "/cars/mercedes-g63-black.webp",
     imageAlt: "Mercedes-Benz G63 AMG Black luxury rental in Dubai",
+    relatedCarSlugs: [
+      "mercedes-g63-black",
+      "lamborghini-urus-black-2021",
+      "lamborghini-huracan-evo-spyder-blue",
+    ],
     keywords: [
       "documents to rent a car in Dubai",
       "tourist car rental Dubai requirements",
@@ -419,8 +440,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-08-05",
     updatedAt: "2026-09-03",
     readTime: 8,
-    image: "/blog/top-scenic-drives-dubai-luxury-car.webp",
+    image: "/cars/porsche-911-gt3-black-matte.webp",
     imageAlt: "Porsche 911 GT3 rental on a scenic Dubai drive",
+    relatedCarSlugs: [
+      "porsche-911-gt3-black-matte",
+      "lamborghini-huracan-evo-spyder-blue",
+      "lamborghini-huracan-evo-coupe-red",
+    ],
     keywords: [
       "scenic drives Dubai",
       "best drives Dubai supercar",
@@ -498,8 +524,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-28",
     updatedAt: "2026-09-03",
     readTime: 5,
-    image: "/blog/daily-vs-weekly-luxury-car-rental-dubai-framed.webp",
+    image: "/cars/lamborghini-urus-black-2021.webp",
     imageAlt: "Lamborghini Urus Black weekly luxury rental in Dubai",
+    relatedCarSlugs: [
+      "lamborghini-urus-black-2021",
+      "mercedes-g63-black",
+      "gmc-yukon-denali-black",
+    ],
     keywords: [
       "weekly luxury car rental Dubai",
       "monthly car rental Dubai luxury",
@@ -560,8 +591,12 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-20",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/convertible-car-rental-dubai-guide-framed.webp",
+    image: "/cars/lamborghini-huracan-evo-spyder-blue.webp",
     imageAlt: "Lamborghini Huracán EVO Spyder Blue convertible rental in Dubai",
+    relatedCarSlugs: [
+      "lamborghini-huracan-evo-spyder-blue",
+      "lamborghini-huracan-evo-spyder-black",
+    ],
     keywords: [
       "convertible car rental Dubai",
       "rent convertible Dubai",
@@ -623,8 +658,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-12",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/luxury-suv-rental-dubai-family-guide-left.webp",
+    image: "/cars/lamborghini-urus-gray-2021.webp",
     imageAlt: "Lamborghini Urus Gray luxury SUV rental in Dubai",
+    relatedCarSlugs: [
+      "lamborghini-urus-gray-2021",
+      "mercedes-g63-white",
+      "gmc-yukon-denali-black",
+    ],
     keywords: [
       "luxury SUV rental Dubai",
       "Rolls-Royce Cullinan rental Dubai",
@@ -678,8 +718,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-07-05",
     updatedAt: "2026-09-03",
     readTime: 7,
-    image: "/blog/dubai-car-rental-speed-limits-traffic-rules-framed.webp",
+    image: "/cars/lamborghini-huracan-evo-coupe-red.webp",
     imageAlt: "Lamborghini Huracán EVO Coupe Red rental driving in Dubai",
+    relatedCarSlugs: [
+      "lamborghini-huracan-evo-coupe-red",
+      "porsche-911-gt3-black-matte",
+      "ferrari-f8-tributo-red",
+    ],
     keywords: [
       "Dubai speed limits",
       "Salik toll rental car",
@@ -755,8 +800,13 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-06-28",
     updatedAt: "2026-09-03",
     readTime: 6,
-    image: "/blog/wedding-luxury-car-rental-dubai-left.webp",
+    image: "/cars/mercedes-g63-white.webp",
     imageAlt: "Mercedes-Benz G63 AMG White wedding car rental in Dubai",
+    relatedCarSlugs: [
+      "mercedes-g63-white",
+      "lamborghini-urus-silver-2022",
+      "brabus-rocket-900-gray",
+    ],
     keywords: [
       "wedding car rental Dubai",
       "Rolls-Royce wedding car Dubai",
@@ -823,6 +873,12 @@ export function getFeaturedPost(): BlogPost | undefined {
 
 export function getPostsByCategory(category: BlogCategory): BlogPost[] {
   return getAllPosts().filter((post) => post.category === category);
+}
+
+export function getPostCars(post: BlogPost): Car[] {
+  return (post.relatedCarSlugs ?? [])
+    .map((slug) => getCarBySlug(slug))
+    .filter((car): car is Car => Boolean(car));
 }
 
 export function getRelatedPosts(slug: string, limit = 3): BlogPost[] {

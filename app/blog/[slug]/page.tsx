@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogCard } from "@/components/BlogCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { CarImage } from "@/components/CarImage";
+import { FleetCard } from "@/components/FleetCard";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -10,6 +12,7 @@ import {
   categoryLabels,
   formatBlogDate,
   getPostBySlug,
+  getPostCars,
   getRelatedPosts,
 } from "@/lib/blog";
 import { resolveImageSrc } from "@/lib/images";
@@ -107,6 +110,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   const related = getRelatedPosts(post.slug);
+  const relatedCars = getPostCars(post);
+  const heroCar = relatedCars[0];
   const faqs = blogPostFaqs(post);
   const crumbs = [
     { name: "Home", path: "/" },
@@ -158,15 +163,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="mt-4 text-sm text-muted">By {post.author}</p>
         </Reveal>
 
-        <Reveal className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border">
-          <Image
-            src={resolveImageSrc(post.image)}
-            alt={post.imageAlt ?? post.title}
-            fill
-            className="object-cover object-[32%_center]"
-            priority
-            sizes="(max-width: 768px) 100vw, 768px"
-          />
+        <Reveal className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl border border-border">
+          {heroCar ? (
+            <CarImage
+              car={heroCar}
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          ) : (
+            <Image
+              src={resolveImageSrc(post.image)}
+              alt={post.imageAlt ?? post.title}
+              fill
+              className="object-cover object-[32%_center]"
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          )}
         </Reveal>
 
         <Reveal className="blog-content mt-10">
@@ -205,8 +218,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             All guides
           </Link>
         </Reveal>
+      </div>
 
-        <Reveal className="mt-12 rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
+      {relatedCars.length > 0 && (
+        <section className="mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+              Cars in this guide
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Available now from the Fame Luxury fleet.
+            </p>
+          </Reveal>
+          <Reveal
+            stagger
+            className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {relatedCars.map((car) => (
+              <FleetCard key={car.id} car={car} compact />
+            ))}
+          </Reveal>
+        </section>
+      )}
+
+      <div className="mx-auto mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <Reveal className="rounded-2xl border border-border bg-surface p-6 text-center sm:p-8">
           <h2 className="text-lg font-bold">
             Rent a luxury car in Dubai with Fame Luxury
           </h2>
@@ -233,25 +269,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </a>
           </div>
         </Reveal>
-
-        {related.length > 0 && (
-          <section className="mt-14">
-            <Reveal>
-              <h2 className="font-display text-2xl font-semibold tracking-tight">
-                Related guides
-              </h2>
-              <p className="mt-2 text-sm text-muted">
-                Keep planning your Dubai luxury car rental with these articles.
-              </p>
-            </Reveal>
-            <Reveal stagger className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((item) => (
-                <BlogCard key={item.slug} post={item} heading="h3" />
-              ))}
-            </Reveal>
-          </section>
-        )}
       </div>
+
+      {related.length > 0 && (
+        <section className="mx-auto mt-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              Related guides
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Keep planning your Dubai luxury car rental with these articles.
+            </p>
+          </Reveal>
+          <Reveal stagger className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((item) => (
+              <BlogCard key={item.slug} post={item} heading="h3" />
+            ))}
+          </Reveal>
+        </section>
+      )}
     </article>
   );
 }

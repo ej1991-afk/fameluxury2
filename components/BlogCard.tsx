@@ -20,9 +20,7 @@ export function BlogCard({ post, featured, heading = "h2" }: BlogCardProps) {
     >
       <Link
         href={`/blog/${post.slug}`}
-        className={`relative block overflow-hidden ${
-          featured ? "aspect-[16/10] sm:aspect-auto sm:min-h-full" : "aspect-[16/10]"
-        }`}
+        className="relative block aspect-[16/10] overflow-hidden"
       >
         <Image
           src={resolveImageSrc(post.image)}
