@@ -92,10 +92,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
+    // Put the large PNG first — Google Search prefers a square PNG >48px over .ico
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.ico", sizes: "48x48" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
