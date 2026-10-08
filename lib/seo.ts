@@ -1,5 +1,7 @@
+import { categoryLabels } from "@/lib/blog";
 import { cars, getAllBrands } from "@/lib/cars";
 import { faqItems } from "@/lib/faq";
+import { resolveImageSrc } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 import type { BlogPost } from "@/lib/types";
 
@@ -161,41 +163,74 @@ export function vehicleJsonLd(car: (typeof cars)[number]) {
   };
 }
 
-export function articleJsonLd(post: {
-  slug: string;
-  title: string;
-  excerpt: string;
-  publishedAt: string;
-  updatedAt?: string;
-  author: string;
-  image: string;
-  keywords?: string[];
-}) {
+export function absoluteImageUrl(src: string): string {
+  const resolved = resolveImageSrc(src);
+  if (resolved.startsWith("http")) return resolved;
+  return `${siteConfig.url}${resolved.startsWith("/") ? resolved : `/${resolved}`}`;
+}
+
+function blogWordCount(post: BlogPost): number {
+  return post.content.reduce((total, block) => {
+    if (block.type === "h2" || block.type === "p") {
+      return total + block.text.split(/\s+/).filter(Boolean).length;
+    }
+    if (block.type === "ul") {
+      return total + block.items.join(" ").split(/\s+/).filter(Boolean).length;
+    }
+    if (block.type === "faq") {
+      return (
+        total +
+        block.items.reduce(
+          (sum, item) =>
+            sum +
+            `${item.question} ${item.answer}`.split(/\s+/).filter(Boolean).length,
+          0,
+        )
+      );
+    }
+    return total;
+  }, 0);
+}
+
+export function articleJsonLd(post: BlogPost) {
+  const imageUrl = absoluteImageUrl(post.image);
+  const pageUrl = `${siteConfig.url}/blog/${post.slug}`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     author: {
-      "@type": "Person",
-      name: post.author,
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
-      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo.svg` },
+      name: siteConfig.legalEntity,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/logo.svg`,
+      },
     },
+    image: {
+      "@type": "ImageObject",
+      url: imageUrl,
+      width: 1600,
+      height: 1000,
+    },
+    articleSection: categoryLabels[post.category],
+    keywords: post.keywords.join(", "),
+    wordCount: blogWordCount(post),
+    inLanguage: "en-AE",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}/blog/${post.slug}`,
+      "@id": pageUrl,
     },
-    image: post.image.startsWith("http")
-      ? post.image
-      : `${siteConfig.url}${post.image}`,
-    keywords: post.keywords?.join(", "),
-    inLanguage: "en-AE",
     isPartOf: {
       "@type": "Blog",
       name: `${siteConfig.name} Blog`,
@@ -204,9 +239,7 @@ export function articleJsonLd(post: {
   };
 }
 
-export function blogIndexJsonLd(
-  posts: { slug: string; title: string; excerpt: string; publishedAt: string }[],
-) {
+export function blogIndexJsonLd(posts: BlogPost[]) {
   return {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -214,6 +247,7 @@ export function blogIndexJsonLd(
     description:
       "Guides and advice for luxury car rental, supercar hire, and self-drive experiences in Dubai.",
     url: `${siteConfig.url}/blog`,
+    inLanguage: "en-AE",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -224,6 +258,9 @@ export function blogIndexJsonLd(
       headline: post.title,
       description: post.excerpt,
       datePublished: post.publishedAt,
+      dateModified: post.updatedAt ?? post.publishedAt,
+      image: absoluteImageUrl(post.image),
+      articleSection: categoryLabels[post.category],
       url: `${siteConfig.url}/blog/${post.slug}`,
     })),
   };

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog";
 import { cars } from "@/lib/cars";
 import { getLocationPages } from "@/lib/locations";
+import { absoluteImageUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -44,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.updatedAt ?? post.publishedAt),
     changeFrequency: "monthly",
     priority: 0.6,
+    images: [absoluteImageUrl(post.image)],
   }));
 
   return [...staticRoutes, ...fleetRoutes, ...locationRoutes, ...blogRoutes];

@@ -17,6 +17,7 @@ import {
 } from "@/lib/blog";
 import { resolveImageSrc } from "@/lib/images";
 import {
+  absoluteImageUrl,
   articleJsonLd,
   blogPostFaqs,
   breadcrumbJsonLd,
@@ -44,13 +45,14 @@ export async function generateMetadata({
 
   const title = post.title;
   const description = post.excerpt;
-  const image = resolveImageSrc(post.image);
+  const image = absoluteImageUrl(post.image);
+  const imageAlt = post.imageAlt ?? post.title;
 
   return {
     title,
     description,
-    keywords: [...post.keywords, ...defaultKeywords.slice(0, 4)],
-    authors: [{ name: post.author }],
+    keywords: [...new Set([...post.keywords, ...defaultKeywords.slice(0, 4)])],
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title,
@@ -58,8 +60,18 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
-      authors: [post.author],
-      images: [{ url: image, alt: post.imageAlt ?? post.title }],
+      authors: [siteConfig.name],
+      section: categoryLabels[post.category],
+      tags: post.keywords,
+      images: [
+        {
+          url: image,
+          alt: imageAlt,
+          width: 1600,
+          height: 1000,
+          type: "image/webp",
+        },
+      ],
       url: `/blog/${post.slug}`,
       siteName: siteConfig.name,
     },
@@ -67,7 +79,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [{ url: image, alt: imageAlt }],
     },
   };
 }

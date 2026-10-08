@@ -42,6 +42,195 @@ export const categorySeo: Record<
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "brabus-rental-dubai-rocket-900-vs-g-class",
+    title: "Brabus Rental in Dubai — Rocket 900 vs G-Class",
+    excerpt:
+      "How the Brabus Rocket 900 and Brabus G-Class differ for a Dubai self-drive — seats, presence, and from-rates in the Fame Luxury fleet.",
+    category: "supercars",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-08",
+    updatedAt: "2026-10-08",
+    readTime: 6,
+    image: "/blog/brabus-rental-dubai.webp",
+    imageAlt: "Brabus Rocket 900 gray luxury car rental in Dubai",
+    relatedCarSlugs: [
+      "brabus-rocket-900-gray",
+      "brabus-g-blue-carbon",
+      "mercedes-g63-black",
+    ],
+    keywords: [
+      "Brabus rental Dubai",
+      "Brabus Rocket 900 rental Dubai",
+      "Brabus G-Class rental Dubai",
+      "rent Brabus Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Most Dubai supercar guides jump straight to Ferrari and Lamborghini. Fame Luxury also keeps two Brabus models on the fleet: the gray Rocket 900 and the blue-carbon Brabus G-Class. They suit different trips, and both are available for self-drive with hotel, villa, or DXB handover.",
+      },
+      {
+        type: "h2",
+        text: "Brabus Rocket 900 Gray — the widebody sedan",
+      },
+      {
+        type: "p",
+        text: "The Rocket 900 is the car for a driver who wants Brabus drama without giving up rear seats. It is a widebody sedan with a low stance, so it photographs well on Sheikh Zayed Road and at hotel arrivals, and it still carries a small group. Self-drive starts from AED 1,999 per day.",
+      },
+      {
+        type: "p",
+        text: "Choose it for a couple or a client meeting when you want something rarer than a standard luxury sedan, and you do not need the height of an SUV.",
+      },
+      {
+        type: "h2",
+        text: "Brabus G-Class Blue Carbon — the statement SUV",
+      },
+      {
+        type: "p",
+        text: "The Brabus G-Class in blue and black carbon is the fleet’s dressed G-Wagon. It keeps the upright shape, the easy hotel-valet access, and the space of a G63, with carbon and colour that a standard black or white G63 does not have. Self-drive starts from AED 1,799 per day.",
+      },
+      {
+        type: "p",
+        text: "It is the better Brabus if you have passengers, luggage, or a wedding arrival, and you still want the badge to read as Brabus rather than a standard Mercedes-AMG.",
+      },
+      {
+        type: "h2",
+        text: "How they compare with a G63",
+      },
+      {
+        type: "ul",
+        items: [
+          "G63 AMG — from AED 1,199/day. The practical luxury SUV, in black, gray, white, and matte finishes.",
+          "Brabus G-Class Blue Carbon — from AED 1,799/day. Same G-Class usability, with a carbon specification.",
+          "Brabus Rocket 900 Gray — from AED 1,999/day. A low widebody sedan for drivers who want the rarer shape.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to confirm before you book",
+      },
+      {
+        type: "ul",
+        items: [
+          "Dates and whether you need one day or a weekly rate.",
+          "Passenger count — the Rocket 900 is a sedan; the Brabus G seats a group.",
+          "Delivery point: hotel, villa, or DXB.",
+          "Deposit terms on the specific car, including any no-deposit option.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Message Fame Luxury on WhatsApp with the model and your dates. The concierge confirms availability and the AED rate before any payment.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Can tourists rent a Brabus in Dubai?",
+            answer:
+              "Yes, if you meet the usual self-drive rules: passport, a valid licence (and an International Driving Permit when your licence is not in English or Arabic), and an approved card. Minimum age for these cars is typically 25.",
+          },
+          {
+            question: "Is the Rocket 900 better than the Brabus G-Class?",
+            answer:
+              "They are for different jobs. Pick the Rocket 900 for a low, rare sedan. Pick the Brabus G-Class when you need SUV space, easier valet access, and carbon presence.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "dubai-luxury-car-rental-hotel-airport-delivery",
+    title: "Hotel, Villa, and DXB Delivery for Your Dubai Rental",
+    excerpt:
+      "How Fame Luxury hands over a self-drive Ferrari, Lamborghini, or G63 — what to send before delivery to a hotel, villa, or Dubai Airport.",
+    category: "rental-advice",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-08",
+    updatedAt: "2026-10-08",
+    readTime: 6,
+    image: "/blog/dubai-luxury-car-delivery.webp",
+    imageAlt: "White Mercedes-Benz G63 ready for hotel delivery in Dubai",
+    relatedCarSlugs: [
+      "mercedes-g63-white",
+      "lamborghini-urus-black-2021",
+      "ferrari-f8-tributo-red",
+    ],
+    keywords: [
+      "luxury car rental Dubai hotel delivery",
+      "DXB airport car rental delivery",
+      "supercar delivery Dubai",
+      "villa car handover Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Every Fame Luxury guide mentions delivery, and almost none explain the handover. The cars leave the Al Quoz showroom on 26th Street and come to you: a hotel, a villa, or Dubai Airport. You drive away yourself. There is no separate depot pickup unless you ask to collect from Al Quoz.",
+      },
+      {
+        type: "h2",
+        text: "Where delivery works",
+      },
+      {
+        type: "ul",
+        items: [
+          "Hotels in Downtown, Dubai Marina, Palm Jumeirah, JBR, Business Bay, and DIFC.",
+          "Villas and residences, including Palm fronds and Dubai Hills.",
+          "DXB terminal handover when you share the flight number and landing time.",
+          "Collection from the Al Quoz showroom if you prefer to pick the car up yourself.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to send before the car moves",
+      },
+      {
+        type: "ul",
+        items: [
+          "Full name of the driver, matching the licence and the card.",
+          "Passport or Emirates ID, plus the licence (and an IDP if the licence is not in English or Arabic).",
+          "Hotel name and room, villa address, or terminal and flight number.",
+          "Preferred model and dates. A white G63 starts from AED 1,199/day, a black Urus from AED 1,999/day, and a Ferrari F8 Tributo from AED 2,399/day.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The concierge confirms the rate, mileage, and deposit on WhatsApp before payment. Delivery timing is part of that message, not something arranged at the kerb.",
+      },
+      {
+        type: "h2",
+        text: "What happens at handover",
+      },
+      {
+        type: "p",
+        text: "The driver named on the booking meets the car. Documents are checked, the car is walked around, and you get a short briefing on fuel, Salik, and the return point. Low cars such as the F8 and the Huracán are easier with hotel valet. A G63 or Urus is the simpler choice if the hotel ramp is steep or you have luggage.",
+      },
+      {
+        type: "h2",
+        text: "Airport arrivals",
+      },
+      {
+        type: "p",
+        text: "For DXB, send the flight number as soon as it is booked. Landing delays are normal, and the handover is timed to the actual arrival rather than the scheduled one. Have the passport and licence ready before you leave the terminal so the check does not happen in the pickup lane.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Can the car be delivered to a hotel under a different name?",
+            answer:
+              "The rental is in the driver’s name. The hotel booking can be in someone else’s name, but the person who drives must match the licence and the card on the agreement.",
+          },
+          {
+            question: "Can I return the car somewhere else?",
+            answer:
+              "Return is usually to the same area or to Al Quoz. Tell the concierge the return hotel, villa, or terminal when you book so it is written into the quote.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "best-supercars-to-rent-in-dubai",
     title: "Best Supercars to Rent in Dubai in 2026",
     excerpt:
@@ -512,6 +701,21 @@ export const blogPosts: BlogPost[] = [
           "Book winter convertibles early; demand spikes October–April.",
         ],
       },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Which Dubai drive is best in a convertible?",
+            answer:
+              "Jumeirah Beach Road and the Palm Jumeirah crescent are the usual open-top routes. October to April is the comfortable season, and hotel valet is easier than street parking for a low car.",
+          },
+          {
+            question: "How long is the Hatta drive from Dubai?",
+            answer:
+              "Allow about two to three hours for the round trip from central Dubai, and confirm the mileage allowance on your rental before you leave the city.",
+          },
+        ],
+      },
     ],
   },
   {
@@ -577,6 +781,21 @@ export const blogPosts: BlogPost[] = [
           "Ask about bundled hotel or residence delivery.",
           "Enquire about no-deposit models to free credit limit.",
           "Book early in peak season for the widest fleet choice.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "When does a weekly luxury car rental cost less than daily?",
+            answer:
+              "From about five to seven days, a weekly package often costs less than paying the full daily rate each day. Ask Fame Luxury to price both options for your exact dates.",
+          },
+          {
+            question: "Who should choose a monthly rental in Dubai?",
+            answer:
+              "Monthly hire suits residents rotating cars and visitors on longer stays. The daily equivalent is usually lower than a short booking, with mileage and insurance written into the agreement.",
+          },
         ],
       },
     ],
@@ -705,6 +924,21 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "Fame Luxury delivers SUVs to hotels, villas, and DXB. Child seats can be arranged on request. Share passenger count and luggage needs when you enquire so we recommend the right model and mileage plan.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Which Fame Luxury SUV is best for a family in Dubai?",
+            answer:
+              "The Lamborghini Urus, Mercedes-Benz G63, and GMC Yukon Denali all seat more than a two-seat supercar. Share how many passengers and how much luggage you have, and the concierge will match the car.",
+          },
+          {
+            question: "Can I get a child seat with an SUV rental?",
+            answer:
+              "Yes. Ask for a child seat when you enquire so it is in the car at hotel, villa, or airport handover.",
+          },
+        ],
       },
     ],
   },
@@ -850,6 +1084,21 @@ export const blogPosts: BlogPost[] = [
           "Confirm decoration rules with your venue and rental agreement.",
           "Share timeline and locations for smooth handover.",
           "Ask about multi-car packages for bridal parties.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Does Fame Luxury provide a wedding chauffeur?",
+            answer:
+              "Fame Luxury specialises in self-drive wedding hire. If you need a chauffeur for the ceremony, say so when you enquire and the concierge can coordinate it.",
+          },
+          {
+            question: "How early should a Dubai wedding car be booked?",
+            answer:
+              "Reserve two to three weeks ahead for November to February. Share the venue times and whether you need more than one car for the bridal party.",
+          },
         ],
       },
     ],
