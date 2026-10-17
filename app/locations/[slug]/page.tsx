@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FleetCard } from "@/components/FleetCard";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { getCarBySlug } from "@/lib/cars";
 import {
   getLocationBySlug,
   getLocationPages,
 } from "@/lib/locations";
 import { breadcrumbJsonLd } from "@/lib/seo";
-import { siteConfig, whatsappUrl } from "@/lib/site";
+import { siteConfig, whatsappCarUrl, whatsappUrl } from "@/lib/site";
 import type { Metadata } from "next";
 
 interface LocationPageProps {
@@ -52,14 +54,28 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
   ];
 
   const related = getLocationPages().filter((item) => item.slug !== location.slug);
+  const cars = (location.carSlugs ?? []).flatMap((slug) => {
+    const car = getCarBySlug(slug);
+    return car ? [car] : [];
+  });
+  const lead = cars[0];
+  const deliveryMessage = lead
+    ? whatsappCarUrl(
+        `${lead.brand} ${lead.name}`,
+        lead.pricePerDay,
+        location.name,
+      )
+    : whatsappUrl(
+        `Hi Fame Luxury! I need luxury car delivery in ${location.name}.`,
+      );
 
   return (
     <div className="py-10 sm:py-16">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={crumbs.slice(1)} />
 
-        <Reveal className="mt-6">
+        <Reveal className="mt-6 max-w-3xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gold">
             Delivery area
           </p>
@@ -82,7 +98,25 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
           </Reveal>
         )}
 
-        <Reveal className="mt-10 rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        {cars.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-lg font-bold">
+              Cars we deliver in {location.name}
+            </h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {cars.map((car) => (
+                <FleetCard
+                  key={car.id}
+                  car={car}
+                  compact
+                  delivery={location.name}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        <Reveal className="mt-10 max-w-3xl rounded-2xl border border-border bg-surface p-6 sm:p-8">
           <h2 className="text-lg font-bold">
             Book {location.name} delivery with {siteConfig.name}
           </h2>
@@ -92,9 +126,7 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <WhatsAppLink
-              href={whatsappUrl(
-                `Hi Fame Luxury! I need luxury car delivery in ${location.name}.`,
-              )}
+              href={deliveryMessage}
               target="_blank"
               rel="noopener noreferrer"
               eventLabel={`location_${location.slug}`}

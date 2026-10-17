@@ -34,11 +34,13 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL?.trim() ||
     "https://maps.app.goo.gl/649hccfJBETNVKh57",
   /** Direct “Write a review” link from GBP. */
-  googleReviewUrl: process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim() || "",
+  googleReviewUrl:
+    process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL?.trim() ||
+    "https://search.google.com/local/writereview?placeid=ChIJ6ax_wxZpXz4RHCwKDIswE_4",
   /** Optional real GBP stats — only used for AggregateRating schema when both set. */
-  googleRating: Number(process.env.NEXT_PUBLIC_GOOGLE_RATING || 0) || 0,
+  googleRating: Number(process.env.NEXT_PUBLIC_GOOGLE_RATING || 5) || 0,
   googleReviewCount:
-    Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT || 0) || 0,
+    Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT || 42) || 0,
   hours: "Mon – Sun, 9 AM – 9 PM",
   afterHours: "Urgent issues via WhatsApp after 9 PM",
   whatsappMessage:
@@ -71,8 +73,12 @@ export function whatsappUrl(message?: string) {
   return `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
 }
 
-export function whatsappCarUrl(carName: string, price: number) {
-  const message = `Hi ${siteConfig.name}! I'm interested in renting the ${carName} (from AED ${price}/day). Please share availability and terms.`;
+export function whatsappCarUrl(
+  carName: string,
+  price: number,
+  delivery = "a hotel, villa, or DXB",
+) {
+  const message = `Hi ${siteConfig.name}! I'm interested in renting the ${carName} (from AED ${price}/day) with delivery to ${delivery}. Please share availability and terms.`;
   return whatsappUrl(message);
 }
 

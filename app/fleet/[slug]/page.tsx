@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { MetaViewContent } from "@/components/MetaViewContent";
 import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { categoryLabels, cars, getCarBySlug, getCarsByBrand } from "@/lib/cars";
 import { vehicleJsonLd } from "@/lib/seo";
 import { siteConfig, whatsappCarUrl } from "@/lib/site";
@@ -141,15 +142,16 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
             </Reveal>
 
             <div className="relative z-10 mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
+              <WhatsAppLink
                 href={whatsappCarUrl(fullName, car.pricePerDay)}
                 target="_blank"
                 rel="noopener noreferrer"
+                eventLabel={`fleet_${car.slug}`}
                 className="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-gold text-sm font-semibold text-background hover:opacity-90"
               >
                 <IconWhatsApp className="h-4 w-4" />
                 Enquire on WhatsApp
-              </a>
+              </WhatsAppLink>
               <CompareButton carId={car.id} />
             </div>
           </Reveal>

@@ -7,7 +7,7 @@ import { cars, getAllBrands } from "@/lib/cars";
 export const metadata = {
   title: "Luxury Car Brands for Rent in Dubai",
   description:
-    "Rent Lamborghini, Ferrari, Rolls-Royce, Mercedes-Benz, Porsche, and more in Dubai. Browse brand collections with self-drive concierge delivery.",
+    "Rent Lamborghini, Ferrari, Porsche, Brabus, Mercedes-Benz, and GMC in Dubai. Browse brand collections with self-drive concierge delivery.",
   alternates: { canonical: "/brands" },
 };
 

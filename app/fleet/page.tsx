@@ -25,7 +25,7 @@ interface FleetPageProps {
 export const metadata = {
   title: "Luxury Car Fleet for Rent in Dubai",
   description:
-    "Browse Ferrari, Lamborghini, Rolls-Royce, Porsche, and Mercedes cars for rent in Dubai. Filter by brand, body style, price, and no-deposit models with concierge delivery.",
+    "Browse Ferrari, Lamborghini, Porsche, Brabus, and Mercedes cars for rent in Dubai. Filter by brand, body style, price, and no-deposit models with concierge delivery.",
   alternates: { canonical: "/fleet" },
 };
 

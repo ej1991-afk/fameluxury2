@@ -45,7 +45,7 @@ const steps = [
     number: "01",
     title: "Choose your car",
     description:
-      "Browse Ferrari, Lamborghini, Rolls-Royce, Porsche, and Mercedes models with live daily rates.",
+      "Browse Ferrari, Lamborghini, Porsche, Brabus, and Mercedes models with live daily rates.",
   },
   {
     number: "02",
@@ -94,7 +94,7 @@ const documents = [
   {
     icon: IconId,
     title: "Age",
-    body: "Drivers must be at least 21. Selected Ferrari, Lamborghini, McLaren, and Rolls-Royce models require 25+.",
+    body: "Drivers must be at least 21. Selected Ferrari, Lamborghini, and Porsche models require 25+.",
   },
   {
     icon: IconId,
@@ -139,7 +139,7 @@ export default function HomePage() {
               <span className="gold-gradient"> Dubai</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              Rent Ferrari, Lamborghini, Rolls-Royce, Porsche, and Mercedes
+              Rent Ferrari, Lamborghini, Porsche, Brabus, and Mercedes
               models with hotel, residence, and airport handover. Terms
               confirmed before booking — selected cars with no deposit.
             </p>
@@ -203,7 +203,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Our collection"
             title="Featured fleet"
-            description="A curated selection of Ferrari, Lamborghini, Rolls-Royce, Porsche, and luxury SUVs available for self-drive rental across Dubai."
+            description="A curated selection of Ferrari, Lamborghini, Porsche, Brabus, and luxury SUVs available for self-drive rental across Dubai."
             href="/fleet"
             cta="View full fleet"
           />

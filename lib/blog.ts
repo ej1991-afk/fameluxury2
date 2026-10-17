@@ -16,7 +16,7 @@ export const categorySeo: Record<
   guides: {
     title: "Luxury Car Rental Guides Dubai",
     description:
-      "Step-by-step guides to renting convertibles, luxury SUVs, Ferrari, Lamborghini, and Rolls-Royce in Dubai with Fame Luxury.",
+      "Step-by-step guides to renting convertibles, luxury SUVs, Ferrari, Lamborghini, and Brabus in Dubai with Fame Luxury.",
   },
   "dubai-tips": {
     title: "Dubai Driving Tips for Luxury Car Rentals",
@@ -26,7 +26,7 @@ export const categorySeo: Record<
   supercars: {
     title: "Supercar Rental Dubai Blog",
     description:
-      "Expert picks for Lamborghini, Ferrari, McLaren, and Porsche rentals in Dubai — models, routes, and booking tips.",
+      "Expert picks for Lamborghini, Ferrari, Porsche, and Brabus rentals in Dubai — models, routes, and booking tips.",
   },
   lifestyle: {
     title: "Luxury Lifestyle & Car Hire Dubai",
@@ -41,6 +41,230 @@ export const categorySeo: Record<
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ferrari-f8-tributo-rental-dubai",
+    title: "Ferrari F8 Tributo Rental in Dubai",
+    excerpt:
+      "Rent the red Ferrari F8 Tributo in Dubai from AED 2,399 a day: who it suits, what to confirm, and how hotel or DXB delivery works.",
+    category: "supercars",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-15",
+    updatedAt: "2026-10-15",
+    readTime: 6,
+    image: "/blog/ferrari-f8-tributo-rental-dubai.webp",
+    imageAlt: "Red Ferrari F8 Tributo rental in a Dubai studio",
+    relatedCarSlugs: [
+      "ferrari-f8-tributo-red",
+      "lamborghini-huracan-evo-coupe-red",
+      "porsche-911-gt3-black-matte",
+    ],
+    featured: false,
+    keywords: [
+      "Ferrari F8 Tributo rental Dubai",
+      "rent Ferrari Dubai",
+      "Ferrari rental cost Dubai",
+      "self-drive Ferrari Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "The Ferrari F8 Tributo is the two-seat Ferrari on the Fame Luxury fleet. It is a 2022 Rosso Corsa car with a 3.9-litre twin-turbo V8, 720 hp, and a 0–100 km/h time of 2.9 seconds. Self-drive rental starts from AED 2,399 a day, with handover at a hotel, villa, or DXB.",
+      },
+      {
+        type: "h2",
+        text: "Who the F8 is for",
+      },
+      {
+        type: "p",
+        text: "Choose it for a couple, a photoshoot, or a short high-impact stay. It has two seats and rear-wheel drive, so it is the wrong car if you need luggage for a family or a third passenger. For that, the Lamborghini Urus or GMC Yukon Denali is the practical alternative.",
+      },
+      {
+        type: "h2",
+        text: "How it compares with the cars next to it",
+      },
+      {
+        type: "ul",
+        items: [
+          "Huracán EVO Coupe Red — from AED 2,199/day, a naturally aspirated V10 and all-wheel drive.",
+          "Porsche 911 GT3 — from AED 2,499/day, a track-bred flat-six in satin black.",
+          "Huracán EVO Spyder — from AED 2,499/day if you want the roof down on the same V10.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to confirm before you book",
+      },
+      {
+        type: "ul",
+        items: [
+          "Driver age is 25+ for this Ferrari.",
+          "Passport, driving licence, and an International Driving Permit when your licence is not in English.",
+          "Mileage, fuel, and the security deposit are written into the WhatsApp quote.",
+          "The F8 is not a no-deposit car. The Urus, G63, and Yukon are.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "How much is the Ferrari F8 Tributo to rent in Dubai?",
+            answer:
+              "The red F8 Tributo starts from AED 2,399 per day. The final quote depends on dates, mileage, and delivery.",
+          },
+          {
+            question: "Can you deliver the F8 to a hotel or DXB?",
+            answer:
+              "Yes. Share the hotel, villa, or terminal and the arrival time. Return is usually the same area or Al Quoz.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "porsche-911-gt3-rental-dubai",
+    title: "Porsche 911 GT3 Rental in Dubai",
+    excerpt:
+      "The matte black Porsche 911 GT3 on the Fame Luxury fleet: 510 hp, two seats, AED 2,499 a day, and when to pick it over a Huracán.",
+    category: "supercars",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-15",
+    updatedAt: "2026-10-15",
+    readTime: 6,
+    image: "/blog/porsche-911-gt3-rental-dubai.webp",
+    imageAlt: "Matte black Porsche 911 GT3 rental in a Dubai studio",
+    relatedCarSlugs: [
+      "porsche-911-gt3-black-matte",
+      "ferrari-f8-tributo-red",
+      "lamborghini-huracan-evo-coupe-red",
+    ],
+    featured: false,
+    keywords: [
+      "Porsche 911 GT3 rental Dubai",
+      "rent Porsche Dubai",
+      "911 GT3 hire Dubai",
+      "matte black 911 rental",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "The Porsche on the Fame Luxury fleet is a 2024 911 GT3 in black matte. It uses a 4.0-litre naturally aspirated flat-six with 510 hp, a 7-speed PDK, and rear-wheel drive. 0–100 km/h is 3.4 seconds. The daily rate starts from AED 2,499.",
+      },
+      {
+        type: "h2",
+        text: "When the GT3 is the right booking",
+      },
+      {
+        type: "p",
+        text: "Pick it if you want a focused sports car you can also use for a Marina or Downtown evening. It is still a two-seater, so it is not a family car. Drivers who want all-wheel drive and a louder V10 should look at the Huracán EVO Coupe, which starts from AED 2,199.",
+      },
+      {
+        type: "h2",
+        text: "Routes that suit it",
+      },
+      {
+        type: "ul",
+        items: [
+          "Sheikh Zayed Road for a short skyline run, then off at Downtown or Business Bay.",
+          "Jumeirah Beach Road toward the Burj Al Arab in clear weather.",
+          "Palm Jumeirah crescent if the booking is for photos as well as driving.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Ask for hotel, villa, or DXB delivery when you message. The GT3 is not listed as no-deposit. If a security hold is a problem, the G63 and Urus are the no-deposit options.",
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "How much does the 911 GT3 cost to rent in Dubai?",
+            answer:
+              "The matte black GT3 starts from AED 2,499 per day. Dates and delivery can change the quote.",
+          },
+          {
+            question: "Is the GT3 a good first supercar rental?",
+            answer:
+              "It is easier to place in traffic than a very low hypercar, but it is still rear-wheel drive and two seats. First-time renters who want more space usually take the Urus.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "lamborghini-huracan-spyder-vs-coupe-dubai",
+    title: "Huracán Spyder vs Coupe Rental in Dubai",
+    excerpt:
+      "Blue or black Huracán EVO Spyder at AED 2,499, or the red coupe at AED 2,199. Which Lamborghini to rent in Dubai, and what changes with the roof.",
+    category: "guides",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-15",
+    updatedAt: "2026-10-15",
+    readTime: 6,
+    image: "/blog/lamborghini-huracan-spyder-vs-coupe-dubai.webp",
+    imageAlt: "Blue Lamborghini Huracán EVO Spyder rental in a Dubai studio",
+    relatedCarSlugs: [
+      "lamborghini-huracan-evo-spyder-blue",
+      "lamborghini-huracan-evo-spyder-black",
+      "lamborghini-huracan-evo-coupe-red",
+    ],
+    featured: false,
+    keywords: [
+      "Huracán Spyder rental Dubai",
+      "Huracán EVO coupe rental Dubai",
+      "convertible rental Dubai",
+      "Lamborghini rental Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "Fame Luxury has three Huracán EVO cars: a blue Spyder, a black Spyder, and a red coupe. All three are 5.2-litre V10s with 610 hp, all-wheel drive, and two seats. The choice is roof, colour, and rate.",
+      },
+      {
+        type: "h2",
+        text: "Spyder — from AED 2,499 a day",
+      },
+      {
+        type: "p",
+        text: "The blue and black Spyders are the open-top cars. 0–100 km/h is 3.5 seconds. Use one for Palm Jumeirah, JBR, or Jumeirah Beach Road when the weather is clear. Winter and early spring are the comfortable months; summer nights are the realistic window in the hotter months.",
+      },
+      {
+        type: "h2",
+        text: "Coupe — from AED 2,199 a day",
+      },
+      {
+        type: "p",
+        text: "The red coupe is AED 300 a day less and a little quicker, at 3.3 seconds to 100 km/h. Choose it for Downtown, Business Bay, and DIFC when you want the V10 without the open cabin, or when the booking is mostly evening driving.",
+      },
+      {
+        type: "h2",
+        text: "What stays the same",
+      },
+      {
+        type: "ul",
+        items: [
+          "Two seats only. Families should book an Urus, G63, or Yukon.",
+          "Hotel, villa, and DXB delivery on request.",
+          "None of the Huracáns are no-deposit cars.",
+          "Driver age for these Lamborghinis is 25+.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "Which Huracán is cheaper to rent in Dubai?",
+            answer:
+              "The red Huracán EVO Coupe starts from AED 2,199 a day. Both Spyders start from AED 2,499.",
+          },
+          {
+            question: "Can I switch from Spyder to coupe if the weather changes?",
+            answer:
+              "Ask on WhatsApp before the handover. A swap depends on whether the other car is free for the same dates.",
+          },
+        ],
+      },
+    ],
+  },
   {
     slug: "gmc-yukon-denali-rental-dubai",
     title: "GMC Yukon Denali Rental in Dubai — Space for Seven",
@@ -329,7 +553,7 @@ export const blogPosts: BlogPost[] = [
     slug: "best-supercars-to-rent-in-dubai",
     title: "Best Supercars to Rent in Dubai in 2026",
     excerpt:
-      "Compare the best supercars to rent in Dubai — Lamborghini Urus, Ferrari F8 Tributo, McLaren 720S, and more — plus booking tips for self-drive hire.",
+      "Compare the best supercars to rent in Dubai — Lamborghini Urus, Ferrari F8 Tributo, Huracán EVO, and Porsche 911 GT3 — plus booking tips for self-drive hire.",
     category: "supercars",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-08-15",
@@ -338,7 +562,7 @@ export const blogPosts: BlogPost[] = [
     image: "/cars/lamborghini-huracan-evo-spyder-black.webp",
     imageAlt: "Lamborghini Huracán EVO Spyder Black rental in Dubai",
     relatedCarSlugs: [
-      "lamborghini-huracan-evo-spyder-black",
+      "lamborghini-urus-gray-2021",
       "ferrari-f8-tributo-red",
       "porsche-911-gt3-black-matte",
     ],
@@ -348,12 +572,12 @@ export const blogPosts: BlogPost[] = [
       "supercar rental Dubai",
       "rent Lamborghini Dubai",
       "rent Ferrari Dubai",
-      "McLaren rental Dubai",
+      "Porsche 911 GT3 rental Dubai",
     ],
     content: [
       {
         type: "p",
-        text: "Dubai is one of the world’s top destinations for supercar rental. Wide highways, hotel valet culture, and year-round demand for Lamborghini, Ferrari, McLaren, and Porsche make self-drive luxury hire feel completely natural — if you choose the right car for your trip.",
+        text: "Dubai is one of the world’s top destinations for supercar rental. Wide highways, hotel valet culture, and year-round demand for Lamborghini, Ferrari, Porsche, and Brabus make self-drive luxury hire feel completely natural — if you choose the right car for your trip.",
       },
       {
         type: "p",
@@ -381,11 +605,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "McLaren 720S — British engineering at speed",
+        text: "Lamborghini Huracán EVO — the two-seat V10",
       },
       {
         type: "p",
-        text: "The McLaren 720S offers a lighter, more technical feel. Dihedral doors turn heads at every hotel entrance, while the chassis control systems keep the car manageable in Marina or Downtown traffic — a strong pick if you want a rare supercar rental Dubai visitors still notice.",
+        text: "The Huracán EVO is the low, loud alternative to the Urus. The red coupe starts from AED 2,199 a day. The blue and black Spyders start from AED 2,499 if the booking is for Palm Jumeirah or JBR with the roof down. All three are two-seat, all-wheel-drive V10s.",
       },
       {
         type: "h2",
@@ -394,10 +618,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Porsche 911 Turbo S — all-weather grip and everyday usability.",
-          "Lamborghini Huracán — raw V10 character for short, high-impact stays.",
-          "Audi R8 — distinctive mid-engine presence with GT comfort.",
-          "Mercedes-AMG GT — grand-touring drama for evening coastal drives.",
+          "Porsche 911 GT3 — a matte black, naturally aspirated sports car from AED 2,499/day.",
+          "Ferrari F8 Tributo — the Rosso two-seater from AED 2,399/day.",
+          "Brabus Rocket 900 — a 900 hp G-Class from AED 1,999/day.",
+          "Brabus G-Class Blue / Black Carbon — a Widestar from AED 1,799/day.",
         ],
       },
       {
@@ -428,7 +652,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "What is the best supercar to rent in Dubai for beginners?",
             answer:
-              "Many first-time renters choose the Lamborghini Urus or a Porsche 911 Turbo S because they offer supercar presence with more everyday usability than a low two-seat hypercar.",
+              "Many first-time renters choose the Lamborghini Urus because it offers supercar presence with five seats. The Porsche 911 GT3 is the tighter, two-seat alternative.",
           },
           {
             question: "Can tourists rent a supercar in Dubai?",
@@ -448,7 +672,7 @@ export const blogPosts: BlogPost[] = [
     slug: "how-much-does-luxury-car-rental-cost-in-dubai",
     title: "How Much Does Luxury Car Rental Cost in Dubai?",
     excerpt:
-      "Typical AED daily rates for Ferrari, Lamborghini, Rolls-Royce, and luxury SUV rental in Dubai — plus what affects price and how to save.",
+      "Typical AED daily rates for Ferrari, Lamborghini, Porsche, Brabus, and luxury SUV rental in Dubai — plus what affects price and how to save.",
     category: "rental-advice",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-09-01",
@@ -467,7 +691,7 @@ export const blogPosts: BlogPost[] = [
       "how much to rent a Lamborghini in Dubai",
       "Ferrari rental cost Dubai",
       "supercar rental Dubai price",
-      "Rolls-Royce rental Dubai cost",
+      "G63 rental Dubai cost",
     ],
     content: [
       {
@@ -485,10 +709,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Performance sedans and sports cars: often from around AED 999–1,999/day.",
-          "Luxury SUVs (Range Rover, Bentley Bentayga class): commonly AED 1,499–2,999/day.",
-          "Supercars (Ferrari, Lamborghini Huracán, McLaren): frequently AED 2,499–4,999+/day.",
-          "Ultra-luxury (Rolls-Royce Ghost, Cullinan): typically among the highest daily rates in the fleet.",
+          "GMC Yukon Denali: from AED 899/day, with seven seats and no-deposit terms.",
+          "Mercedes-Benz G63: from AED 1,199/day, including no-deposit models.",
+          "Brabus G-Class and Rocket 900: from AED 1,799 and AED 1,999/day.",
+          "Lamborghini Urus: from AED 1,999/day. Huracán EVO Coupe from AED 2,199, F8 Tributo from AED 2,399, Spyder and 911 GT3 from AED 2,499.",
         ],
       },
       {
@@ -515,7 +739,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Share exact dates, passenger count, and preferred brands when you enquire. If you are flexible, ask which Ferrari, Lamborghini, or Rolls-Royce models are available in your window — inventory changes daily and flexible clients often secure stronger packages.",
+        text: "Share exact dates, passenger count, and preferred cars when you enquire. If you are flexible, ask which Ferrari, Lamborghini, Porsche, or SUV is free in your window — inventory changes daily and flexible clients often secure stronger packages.",
       },
       {
         type: "p",
@@ -757,7 +981,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Drive parallel to the coast from Jumeirah toward Umm Suqeim past the Burj Al Arab. Convertibles shine here in winter months; pair this route with a Huracán Spyder or Portofino if open-top weather is on your checklist.",
+        text: "Drive parallel to the coast from Jumeirah toward Umm Suqeim past the Burj Al Arab. Convertibles shine here in winter months; pair this route with a Huracán EVO Spyder if open-top weather is on your checklist.",
       },
       {
         type: "h2",
@@ -773,7 +997,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Smooth tarmac toward Al Qudra Lakes puts dunes on both sides at golden hour. Luxury SUVs such as the Urus, Cullinan, or Range Rover Sport are comfortable choices if you plan short lakeside walks.",
+        text: "Smooth tarmac toward Al Qudra Lakes puts dunes on both sides at golden hour. Luxury SUVs such as the Urus, G63, or Yukon Denali are comfortable choices if you plan short lakeside walks.",
       },
       {
         type: "h2",
@@ -839,7 +1063,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "Luxury car rental in Dubai is not one-size-fits-all. Choosing daily, weekly, or monthly hire changes both your effective rate and how you use Ferrari, Lamborghini, Rolls-Royce, or SUV models during the stay.",
+        text: "Luxury car rental in Dubai is not one-size-fits-all. Choosing daily, weekly, or monthly hire changes both your effective rate and how you use a Ferrari, Lamborghini, Porsche, or SUV during the stay.",
       },
       {
         type: "h2",
@@ -899,7 +1123,7 @@ export const blogPosts: BlogPost[] = [
     slug: "convertible-car-rental-dubai-guide",
     title: "Convertible Car Rental in Dubai — Best Models & Season",
     excerpt:
-      "Why Dubai is ideal for convertible hire, best months for open-top driving, and top Lamborghini, Ferrari, and Rolls-Royce convertible rentals.",
+      "Why Dubai is ideal for convertible hire, the best months for open-top driving, and the Huracán EVO Spyder rentals on the Fame Luxury fleet.",
     category: "guides",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-07-20",
@@ -915,12 +1139,12 @@ export const blogPosts: BlogPost[] = [
       "convertible car rental Dubai",
       "rent convertible Dubai",
       "Lamborghini Spyder rental Dubai",
-      "Ferrari Portofino rental Dubai",
+      "Huracán Spyder rental Dubai",
     ],
     content: [
       {
         type: "p",
-        text: "With hundreds of sunny days and a coastline built for cruising, Dubai is one of the best cities in the world for convertible car rental. Whether you want a Lamborghini Huracán Spyder, Ferrari Portofino, or a luxury soft-top experience, dropping the roof turns every Marina or Jumeirah drive into an event.",
+        text: "With hundreds of sunny days and a coastline built for cruising, Dubai is one of the best cities in the world for convertible car rental. The open-top cars on the Fame Luxury fleet are the blue and black Lamborghini Huracán EVO Spyders. Dropping the roof turns a Marina or Jumeirah drive into an event.",
       },
       {
         type: "h2",
@@ -937,9 +1161,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Lamborghini Huracán Spyder — aggressive styling and V10 soundtrack.",
-          "Ferrari Portofino — elegant GT manners with a retractable hardtop.",
-          "BMW 430i Convertible — stylish daily open-top option for longer stays.",
+          "Huracán EVO Spyder Blue — open-top V10 from AED 2,499/day.",
+          "Huracán EVO Spyder Black — the same Spyder in Nero, also from AED 2,499/day.",
+          "Huracán EVO Coupe Red — the hardtop alternative from AED 2,199/day when you want the V10 with the roof fixed.",
         ],
       },
       {
@@ -966,7 +1190,7 @@ export const blogPosts: BlogPost[] = [
     slug: "luxury-suv-rental-dubai-family-guide",
     title: "Luxury SUV Rental in Dubai — Family & Group Guide",
     excerpt:
-      "Why luxury SUVs like Rolls-Royce Cullinan, Lamborghini Urus, and Range Rover dominate Dubai rentals for families and groups.",
+      "Why the Lamborghini Urus, Mercedes-Benz G63, Brabus G-Class, and GMC Yukon Denali are the family and group rentals on the Fame Luxury fleet.",
     category: "guides",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-07-12",
@@ -981,7 +1205,7 @@ export const blogPosts: BlogPost[] = [
     ],
     keywords: [
       "luxury SUV rental Dubai",
-      "Rolls-Royce Cullinan rental Dubai",
+      "GMC Yukon Denali rental Dubai",
       "Lamborghini Urus rental Dubai",
       "family luxury car rental Dubai",
     ],
@@ -996,7 +1220,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Wide lanes, hotel valet culture, and airport luggage needs favour larger vehicles. Elevated seating, four-to-five passenger comfort, and strong A/C make Cullinan, Urus, Bentayga, and Range Rover class SUVs everyday heroes in the heat.",
+        text: "Wide lanes, hotel valet culture, and airport luggage needs favour larger vehicles. Elevated seating and strong A/C make the Urus, G63, Brabus G-Class, and Yukon Denali the practical choices in the heat.",
       },
       {
         type: "h2",
@@ -1005,11 +1229,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Rolls-Royce Cullinan — flagship refinement and presence.",
-          "Lamborghini Urus — supercar performance in SUV form.",
-          "Range Rover Sport — British luxury with real capability.",
-          "BMW XM — bold styling with plug-in hybrid performance.",
-          "Cadillac Escalade — maximum space for larger groups.",
+          "Lamborghini Urus — five seats and supercar presence, from AED 1,999/day, with no-deposit terms.",
+          "Mercedes-Benz G63 — from AED 1,199/day, including black, white, gray, and matte cars.",
+          "Brabus G-Class — the blue and black carbon Widestar from AED 1,799/day.",
+          "GMC Yukon Denali — seven seats from AED 899/day, the roomiest car in the fleet.",
         ],
       },
       {
@@ -1123,7 +1346,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wedding-luxury-car-rental-dubai",
     title: "Luxury Car Rental for Weddings in Dubai",
     excerpt:
-      "Choose bridal cars in Dubai — Rolls-Royce Ghost, Cullinan, Bentley, and Urus tips for self-drive or chauffeur wedding hire.",
+      "Choose a bridal car from the Fame Luxury fleet — white G63, silver Urus, and Brabus Rocket 900 for self-drive or chauffeur wedding hire.",
     category: "lifestyle",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-06-28",
@@ -1138,14 +1361,14 @@ export const blogPosts: BlogPost[] = [
     ],
     keywords: [
       "wedding car rental Dubai",
-      "Rolls-Royce wedding car Dubai",
+      "G63 wedding car Dubai",
       "bridal car hire Dubai",
       "luxury wedding car UAE",
     ],
     content: [
       {
         type: "p",
-        text: "A Dubai wedding deserves an entrance to match. From Rolls-Royce Ghost and Cullinan to bold Lamborghini Urus arrivals, luxury car rental is one of the most requested upgrades for UAE celebrations and photoshoots.",
+        text: "A Dubai wedding deserves an entrance to match. A white G63, a silver Urus, or the Brabus Rocket 900 is the kind of arrival guests photograph. Luxury car rental is one of the most requested upgrades for UAE celebrations and photoshoots.",
       },
       {
         type: "h2",
@@ -1154,10 +1377,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Rolls-Royce Ghost — timeless elegance for the couple.",
-          "Rolls-Royce Cullinan — space for gowns and close family.",
-          "Bentley Continental GT — classic British luxury.",
-          "Lamborghini Urus — bold contemporary presence.",
+          "Mercedes-Benz G63 White — a bright arrival car from AED 1,199/day.",
+          "Lamborghini Urus Silver — five seats and room for a gown, from AED 1,999/day.",
+          "Brabus Rocket 900 — the widest presence in the fleet, from AED 1,999/day.",
         ],
       },
       {

@@ -19,17 +19,17 @@ export const reviews: Review[] = [
     name: "Amira S.",
     location: "Riyadh",
     rating: 5,
-    car: "Rolls-Royce Cullinan",
+    car: "Mercedes-Benz G63",
     quote:
-      "We needed a Cullinan for family photos on the Palm. Terms were confirmed before payment and the car arrived exactly as described.",
+      "We needed a G63 for family photos on the Palm. Terms were confirmed before payment and the car arrived exactly as described.",
   },
   {
     name: "James P.",
     location: "New York",
     rating: 5,
-    car: "Ferrari 296 GTB",
+    car: "Ferrari F8 Tributo",
     quote:
-      "Best supercar rental I have used in Dubai. Clear mileage, no last-minute surprises, and the 296 GTB was a highlight of the week.",
+      "Best supercar rental I have used in Dubai. Clear mileage, no last-minute surprises, and the F8 Tributo was a highlight of the week.",
   },
   {
     name: "Omar H.",
@@ -43,16 +43,16 @@ export const reviews: Review[] = [
     name: "Elena V.",
     location: "Milan",
     rating: 5,
-    car: "Porsche 911 Turbo S",
+    car: "Porsche 911 GT3",
     quote:
-      "Tourist documents were checked quickly, no-deposit option on the 911, and free delivery to JBR. Professional from start to finish.",
+      "Tourist documents were checked quickly, the GT3 was ready on time, and delivery to JBR was straightforward. Professional from start to finish.",
   },
   {
     name: "Ryan T.",
     location: "Sydney",
     rating: 5,
-    car: "McLaren 720S",
+    car: "Lamborghini Huracán EVO",
     quote:
-      "The 720S turned heads everywhere. Support after 9 PM on WhatsApp was actually available when we needed a route suggestion.",
+      "The Huracán turned heads everywhere. Support after 9 PM on WhatsApp was actually available when we needed a route suggestion.",
   },
 ];

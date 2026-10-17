@@ -14,7 +14,7 @@ export const defaultKeywords = [
   "no deposit car rental Dubai",
   "convertible car rental Dubai",
   "luxury SUV rental Dubai",
-  "Rolls-Royce rental Dubai",
+  "G63 rental Dubai",
   "Porsche rental Dubai",
 ];
 

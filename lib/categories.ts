@@ -15,7 +15,7 @@ export const homepageCategories: CategorySection[] = [
     eyebrow: "Sports & supercars",
     title: "Sports car rental in Dubai",
     description:
-      "Drive Ferrari, Lamborghini, McLaren, and Porsche models built for Sheikh Zayed Road, coastal cruising, and events. Self-drive supercar rental with concierge delivery across Dubai.",
+      "Drive the Ferrari F8 Tributo, Lamborghini Huracán, Porsche 911 GT3, and Brabus models built for Sheikh Zayed Road, coastal cruising, and events. Self-drive supercar rental with concierge delivery across Dubai.",
     href: "/fleet?category=supercar",
     cta: "View all supercars",
   },
@@ -33,7 +33,7 @@ export const homepageCategories: CategorySection[] = [
     eyebrow: "Space & presence",
     title: "Luxury SUV rental in Dubai",
     description:
-      "Urus, G63, Cullinan, and Range Rover models for families, groups, and VIP arrivals. Premium SUVs with luggage space and hotel, villa, or airport handover.",
+      "Urus, G63, Brabus G-Class, and Yukon Denali for families, groups, and VIP arrivals. Premium SUVs with luggage space and hotel, villa, or airport handover.",
     href: "/fleet?category=suv",
     cta: "View all luxury SUVs",
   },

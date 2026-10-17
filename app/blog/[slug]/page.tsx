@@ -7,6 +7,7 @@ import { CarImage } from "@/components/CarImage";
 import { FleetCard } from "@/components/FleetCard";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import {
   blogPosts,
   categoryLabels,
@@ -24,7 +25,7 @@ import {
   defaultKeywords,
   faqJsonLd,
 } from "@/lib/seo";
-import { siteConfig, whatsappUrl } from "@/lib/site";
+import { siteConfig, whatsappCarUrl, whatsappUrl } from "@/lib/site";
 import type { BlogContentBlock } from "@/lib/types";
 import type { Metadata } from "next";
 
@@ -259,7 +260,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Rent a luxury car in Dubai with Fame Luxury
           </h2>
           <p className="mt-2 text-sm text-muted">
-            Self-drive Ferrari, Lamborghini, Rolls-Royce, and SUV hire with hotel
+            Self-drive Ferrari, Lamborghini, Porsche, and SUV hire with hotel
             and DXB delivery. Get a WhatsApp quote in minutes.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -269,16 +270,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             >
               Browse Fleet
             </Link>
-            <a
-              href={whatsappUrl(
-                `Hi Fame Luxury! I read "${post.title}" and want a rental quote in Dubai.`,
-              )}
+            <WhatsAppLink
+              href={
+                heroCar
+                  ? whatsappCarUrl(
+                      `${heroCar.brand} ${heroCar.name}`,
+                      heroCar.pricePerDay,
+                    )
+                  : whatsappUrl(
+                      `Hi Fame Luxury! I read "${post.title}" and want a rental quote in Dubai.`,
+                    )
+              }
               target="_blank"
               rel="noopener noreferrer"
+              eventLabel={`blog_${post.slug}`}
               className="inline-flex h-11 items-center rounded-full border border-border px-6 text-sm font-semibold text-foreground"
             >
               Chat on WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </Reveal>
       </div>

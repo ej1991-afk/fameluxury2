@@ -43,6 +43,7 @@ export interface Location {
   seoDescription?: string;
   longDescription?: string;
   highlights?: string[];
+  carSlugs?: string[];
 }
 
 export type BlogCategory =

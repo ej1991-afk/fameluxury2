@@ -61,7 +61,7 @@ export async function generateMetadata({
     openGraph: {
       title: "Luxury Car Rental Dubai Blog | Fame Luxury",
       description:
-        "Guides and advice for renting Ferrari, Lamborghini, Rolls-Royce, and luxury SUVs in Dubai.",
+        "Guides and advice for renting Ferrari, Lamborghini, Porsche, and luxury SUVs in Dubai.",
       type: "website",
       url: "/blog",
     },
@@ -72,7 +72,7 @@ const topicLinks = [
   {
     href: "/fleet",
     label: "Browse the fleet",
-    detail: "Ferrari, Lamborghini, Rolls-Royce & more",
+    detail: "Ferrari, Lamborghini, Porsche & SUVs",
   },
   {
     href: "/faq",
@@ -198,7 +198,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             Ready to rent a luxury car in Dubai?
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-muted">
-            Browse Ferrari, Lamborghini, Rolls-Royce, and luxury SUV rentals — or
+            Browse Ferrari, Lamborghini, Porsche, and luxury SUV rentals — or
             message our concierge for a same-day WhatsApp quote with delivery
             options.
           </p>

@@ -10,6 +10,7 @@ import {
   IconWhatsApp,
 } from "@/components/Icons";
 import { Price } from "@/components/Price";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { categoryLabels } from "@/lib/cars";
 import { whatsappCarUrl } from "@/lib/site";
 import type { Car } from "@/lib/types";
@@ -18,9 +19,10 @@ import { useCompare } from "./CompareProvider";
 interface FleetCardProps {
   car: Car;
   compact?: boolean;
+  delivery?: string;
 }
 
-export function FleetCard({ car, compact = false }: FleetCardProps) {
+export function FleetCard({ car, compact = false, delivery }: FleetCardProps) {
   const { addToCompare, removeFromCompare, isInCompare } = useCompare();
   const inCompare = isInCompare(car.id);
 
@@ -101,15 +103,20 @@ export function FleetCard({ car, compact = false }: FleetCardProps) {
         </div>
 
         <div className="relative z-10 mt-4 grid grid-cols-3 gap-2">
-          <a
-            href={whatsappCarUrl(`${car.brand} ${car.name}`, car.pricePerDay)}
+          <WhatsAppLink
+            href={whatsappCarUrl(
+              `${car.brand} ${car.name}`,
+              car.pricePerDay,
+              delivery,
+            )}
             target="_blank"
             rel="noopener noreferrer"
+            eventLabel={`fleet_card_${car.slug}`}
             className="touch-manipulation col-span-1 flex min-h-[44px] items-center justify-center gap-1 rounded-lg bg-gold text-xs font-semibold text-background transition-opacity hover:opacity-90"
           >
             <IconWhatsApp className="h-3.5 w-3.5" />
             Rent
-          </a>
+          </WhatsAppLink>
           <Link
             href={`/fleet/${car.slug}`}
             className="touch-manipulation flex min-h-[44px] items-center justify-center rounded-lg border border-border text-xs font-semibold text-foreground hover:border-gold/40"
