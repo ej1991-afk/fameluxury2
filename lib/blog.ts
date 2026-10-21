@@ -42,6 +42,89 @@ export const categorySeo: Record<
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "lamborghini-urus-rental-dubai",
+    title: "Lamborghini Urus Rental in Dubai",
+    excerpt:
+      "Rent a Lamborghini Urus in Dubai from AED 1,999 a day. Gray, silver, and black cars, five seats, no-deposit terms, and hotel or DXB delivery.",
+    category: "guides",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-10-20",
+    updatedAt: "2026-10-20",
+    readTime: 6,
+    image: "/blog/lamborghini-urus-rental-dubai.webp",
+    imageAlt: "Black Lamborghini Urus rental in a Dubai studio",
+    relatedCarSlugs: [
+      "lamborghini-urus-black-2021",
+      "lamborghini-urus-silver-2022",
+      "lamborghini-urus-gray-2021",
+    ],
+    featured: false,
+    keywords: [
+      "Lamborghini Urus rental Dubai",
+      "rent Urus Dubai",
+      "Urus hire cost Dubai",
+      "no deposit Urus rental Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "The Lamborghini Urus is the five-seat supercar SUV on the Fame Luxury fleet. There are three: a 2021 gray, a 2021 black, and a 2022 silver. Each uses a 4.0-litre twin-turbo V8 with 650 hp, all-wheel drive, and an 8-speed automatic. 0–100 km/h is 3.6 seconds. Self-drive rental starts from AED 1,999 a day, and all three are no-deposit cars.",
+      },
+      {
+        type: "h2",
+        text: "Which colour to book",
+      },
+      {
+        type: "ul",
+        items: [
+          "Urus Black — Nero, the darkest of the three, for evening Downtown and DIFC arrivals.",
+          "Urus Silver — the 2022 car, the brightest choice for Palm Jumeirah and wedding photos.",
+          "Urus Gray — Grigio, a quieter finish for a week of hotel driving.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The rate, seats, and performance are the same. The colour is the only difference, so book whichever car is free for your dates.",
+      },
+      {
+        type: "h2",
+        text: "When the Urus is the right rental",
+      },
+      {
+        type: "p",
+        text: "Choose it when the group is up to five people and you still want Lamborghini presence. It is the wrong car for seven passengers — that booking is the GMC Yukon Denali, from AED 899 a day. If you want the same five seats for less, the Mercedes-Benz G63 starts from AED 1,199 a day and is also no-deposit. The Huracán and F8 are two-seat alternatives when luggage is not the point.",
+      },
+      {
+        type: "h2",
+        text: "What to confirm before you book",
+      },
+      {
+        type: "ul",
+        items: [
+          "Driver age is 25+ for the Urus.",
+          "Passport, driving licence, and an International Driving Permit when your licence is not in English.",
+          "Hotel, villa, or DXB delivery is available. Share the pin and arrival time.",
+          "No-deposit terms are confirmed in the WhatsApp quote, along with mileage and fuel.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "How much is a Lamborghini Urus to rent in Dubai?",
+            answer:
+              "The gray, silver, and black Urus each start from AED 1,999 per day. Dates, mileage, and delivery can change the quote.",
+          },
+          {
+            question: "Is the Urus a no-deposit rental?",
+            answer:
+              "Yes. All three Urus cars on the Fame Luxury fleet are listed as no-deposit. The concierge confirms that in writing before payment.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "ferrari-f8-tributo-rental-dubai",
     title: "Ferrari F8 Tributo Rental in Dubai",
     excerpt:
