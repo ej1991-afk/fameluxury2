@@ -16,6 +16,7 @@ export const siteConfig = {
   landline: "(04) 388 3411",
   landlineRaw: "97143883411",
   legalEntity: "Fame Luxury Car Rental LLC",
+  alternateNames: ["Fame Luxury Car Rental", "Fame Luxury Cars Dubai"],
   email: "info@fameluxury.com",
   address: "26th St, Al Quoz Industrial Area 2, Al Quoz, Dubai, UAE",
   addressStreet: "26th St, Al Quoz Industrial Area 2, Al Quoz",
