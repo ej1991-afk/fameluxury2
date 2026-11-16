@@ -10,8 +10,11 @@ import { MetaViewContent } from "@/components/MetaViewContent";
 import { Price } from "@/components/Price";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { getAllPosts } from "@/lib/blog";
+import { getCarContent } from "@/lib/car-content";
 import { categoryLabels, cars, getCarBySlug, getCarsByBrand } from "@/lib/cars";
-import { vehicleJsonLd } from "@/lib/seo";
+import { getLocationPages } from "@/lib/locations";
+import { faqJsonLd, vehicleJsonLd } from "@/lib/seo";
 import { siteConfig, whatsappCarUrl } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -30,8 +33,11 @@ export async function generateMetadata({
   const car = getCarBySlug(slug);
   if (!car) return { title: "Vehicle Not Found" };
   const fullName = `${car.brand} ${car.name}`;
-  const title = `Rent ${fullName} in Dubai`;
-  const description = `Rent the ${fullName} in Dubai from AED ${car.pricePerDay}/day. Self-drive ${categoryLabels[car.category].toLowerCase()} rental with hotel, residence, and airport delivery.`;
+  const content = getCarContent(car.slug);
+  const title = content?.seoTitle ?? `Rent ${fullName} in Dubai`;
+  const description =
+    content?.seoDescription ??
+    `Rent the ${fullName} in Dubai from AED ${car.pricePerDay}/day. Self-drive ${categoryLabels[car.category].toLowerCase()} rental with hotel, residence, and airport delivery.`;
   return {
     title,
     description,
@@ -53,10 +59,18 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
   const related = getCarsByBrand(car.brand)
     .filter((item) => item.id !== car.id)
     .slice(0, 3);
+  const content = getCarContent(car.slug);
+  const guides = getAllPosts()
+    .filter((post) => post.relatedCarSlugs?.includes(car.slug))
+    .slice(0, 4);
+  const deliveryAreas = getLocationPages().filter((location) =>
+    location.carSlugs?.includes(car.slug),
+  );
 
   return (
     <div className="py-10 sm:py-16">
       <JsonLd data={vehicleJsonLd(car)} />
+      {content && <JsonLd data={faqJsonLd(content.faqs)} />}
       <MetaViewContent
         contentId={car.id}
         contentName={fullName}
@@ -161,6 +175,14 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
           <h2 className="font-display text-2xl font-semibold">
             Rent the {fullName} in Dubai
           </h2>
+          {content?.overview.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="mt-3 max-w-3xl text-sm leading-relaxed text-muted"
+            >
+              {paragraph}
+            </p>
+          ))}
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
             The {fullName} is available for self-drive rental with hotel, villa,
             office, DXB, and DWC handover. {siteConfig.name} confirms mileage,
@@ -184,6 +206,65 @@ export default async function CarDetailPage({ params }: CarDetailPageProps) {
             ))}
           </ul>
         </Reveal>
+
+        {content && (
+          <Reveal as="section" className="mt-12 max-w-3xl">
+            <h2 className="font-display text-2xl font-semibold">
+              {fullName} rental FAQs
+            </h2>
+            <div className="mt-4 space-y-3">
+              {content.faqs.map((faq) => (
+                <details key={faq.question} className="luxury-panel p-4">
+                  <summary className="cursor-pointer text-sm font-semibold">
+                    {faq.question}
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </Reveal>
+        )}
+
+        {(guides.length > 0 || deliveryAreas.length > 0) && (
+          <Reveal as="section" className="mt-12 grid gap-8 md:grid-cols-2">
+            {guides.length > 0 && (
+              <div>
+                <h2 className="text-lg font-bold">Guides about this car</h2>
+                <ul className="mt-3 space-y-2">
+                  {guides.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="text-sm text-gold hover:underline"
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {deliveryAreas.length > 0 && (
+              <div>
+                <h2 className="text-lg font-bold">Delivered to these areas</h2>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {deliveryAreas.map((location) => (
+                    <li key={location.slug}>
+                      <Link
+                        href={`/locations/${location.slug}`}
+                        className="inline-block rounded-full border border-border px-4 py-2 text-sm hover:border-gold/40"
+                      >
+                        {location.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </Reveal>
+        )}
 
         {related.length > 0 ? (
           <section className="mt-16">

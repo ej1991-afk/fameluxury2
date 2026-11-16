@@ -1,4 +1,5 @@
 import { categoryLabels } from "@/lib/blog";
+import { getCarContent } from "@/lib/car-content";
 import { cars, getAllBrands } from "@/lib/cars";
 import { faqItems } from "@/lib/faq";
 import { resolveImageSrc } from "@/lib/images";
@@ -21,7 +22,7 @@ export const defaultKeywords = [
 export function localBusinessJsonLd() {
   const sameAs = [
     siteConfig.googleBusinessUrl,
-    siteConfig.url,
+    ...siteConfig.socialProfiles,
   ].filter(Boolean);
 
   const jsonLd: Record<string, unknown> = {
@@ -32,7 +33,7 @@ export function localBusinessJsonLd() {
     legalName: siteConfig.legalEntity,
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.svg`,
-    image: `${siteConfig.url}/hero.webp`,
+    image: `${siteConfig.url}/og-image.jpg`,
     description: siteConfig.description,
     telephone: `+${siteConfig.phoneRaw}`,
     email: siteConfig.email,
@@ -150,7 +151,9 @@ export function vehicleJsonLd(car: (typeof cars)[number]) {
     name: `${car.brand} ${car.name}`,
     brand: { "@type": "Brand", name: car.brand },
     model: car.name,
-    description: `Rent the ${car.brand} ${car.name} in Dubai from AED ${car.pricePerDay}/day. Self-drive luxury car rental with hotel, residence, and airport delivery.`,
+    description:
+      getCarContent(car.slug)?.seoDescription ??
+      `Rent the ${car.brand} ${car.name} in Dubai from AED ${car.pricePerDay}/day. Self-drive luxury car rental with hotel, residence, and airport delivery.`,
     vehicleSeatingCapacity: car.specs.seats,
     vehicleTransmission: car.specs.transmission,
     vehicleEngine: car.specs.engine,

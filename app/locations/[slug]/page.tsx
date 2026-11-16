@@ -6,11 +6,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { getCarBySlug } from "@/lib/cars";
+import { getLocationContent } from "@/lib/location-content";
 import {
   getLocationBySlug,
   getLocationPages,
 } from "@/lib/locations";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { siteConfig, whatsappCarUrl, whatsappUrl } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -59,6 +60,7 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
     return car ? [car] : [];
   });
   const lead = cars[0];
+  const content = getLocationContent(location.slug);
   const deliveryMessage = lead
     ? whatsappCarUrl(
         `${lead.brand} ${lead.name}`,
@@ -72,6 +74,7 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
   return (
     <div className="py-10 sm:py-16">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      {content && <JsonLd data={faqJsonLd(content.faqs)} />}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={crumbs.slice(1)} />
 
@@ -85,6 +88,11 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
           <p className="mt-4 text-lg text-muted">
             {location.longDescription ?? location.description}
           </p>
+          {content?.details.map((paragraph) => (
+            <p key={paragraph} className="mt-4 text-muted">
+              {paragraph}
+            </p>
+          ))}
         </Reveal>
 
         {location.highlights && (
@@ -142,6 +150,26 @@ export default async function LocationDetailPage({ params }: LocationPageProps) 
             </Link>
           </div>
         </Reveal>
+
+        {content && (
+          <Reveal as="section" className="mt-12 max-w-3xl">
+            <h2 className="text-lg font-bold">
+              {location.name} delivery FAQs
+            </h2>
+            <div className="mt-4 space-y-3">
+              {content.faqs.map((faq) => (
+                <details key={faq.question} className="luxury-panel p-4">
+                  <summary className="cursor-pointer text-sm font-semibold">
+                    {faq.question}
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </Reveal>
+        )}
 
         {related.length > 0 && (
           <Reveal as="section" className="mt-12">

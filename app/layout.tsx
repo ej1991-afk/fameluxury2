@@ -67,10 +67,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/hero.webp",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fame Luxury supercar rental in Dubai",
+        alt: "Lamborghini Huracán EVO Spyder rental in Dubai with Fame Luxury",
       },
     ],
   },
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luxury Car Rental Dubai | Fame Luxury",
     description: siteConfig.description,
-    images: ["/hero.webp"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
