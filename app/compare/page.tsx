@@ -5,6 +5,7 @@ import { CarImage } from "@/components/CarImage";
 import { useCompare } from "@/components/CompareProvider";
 import { Reveal } from "@/components/Reveal";
 import { useCurrency } from "@/components/CurrencyProvider";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { categoryLabels, getCarById } from "@/lib/cars";
 import { whatsappUrl } from "@/lib/site";
 
@@ -106,14 +107,15 @@ export default function ComparePage() {
         </Reveal>
 
         <Reveal className="mt-8 text-center">
-          <a
+          <WhatsAppLink
             href={whatsappUrl("Hi Fame Luxury! I'd like to compare these vehicles and check availability.")}
             target="_blank"
             rel="noopener noreferrer"
+            eventLabel="compare"
             className="inline-flex h-12 items-center rounded-full bg-gold px-8 text-sm font-semibold text-background"
           >
             Enquire on WhatsApp
-          </a>
+          </WhatsAppLink>
         </Reveal>
       </div>
     </div>

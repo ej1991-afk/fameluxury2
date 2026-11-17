@@ -53,7 +53,7 @@ export const faqItems: FAQItem[] = [
     category: "Pricing",
     question: "How much does it cost to rent a luxury car in Dubai?",
     answer:
-      "Daily rates start from around AED 999 for performance sedans and typically range from AED 2,499 to AED 5,999 for supercars, convertibles, and ultra-luxury SUVs. Weekly and monthly bookings usually reduce the effective daily rate.",
+      "Daily rates start from AED 1,000 for the GMC Yukon Denali and typically range from AED 1,500 to AED 2,600 for G-Wagens, Urus, Ferrari, Lamborghini, Porsche, and Brabus. Weekly and monthly bookings usually reduce the effective daily rate.",
   },
   {
     category: "Tourists",

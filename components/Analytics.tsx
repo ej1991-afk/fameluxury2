@@ -3,7 +3,11 @@
 import Script from "next/script";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
+const adsWhatsAppSendTo =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_SEND_TO?.trim();
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
+const gtagId = gaId || adsId;
 
 declare global {
   interface Window {
@@ -15,14 +19,14 @@ declare global {
 }
 
 export function Analytics() {
-  if (!gaId && !metaPixelId) return null;
+  if (!gtagId && !metaPixelId) return null;
 
   return (
     <>
-      {gaId ? (
+      {gtagId ? (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
             strategy="afterInteractive"
           />
           <Script id="ga4-init" strategy="afterInteractive">
@@ -30,7 +34,8 @@ export function Analytics() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${gaId}', { anonymize_ip: true });
+              ${gaId ? `gtag('config', '${gaId}', { anonymize_ip: true });` : ""}
+              ${adsId ? `gtag('config', '${adsId}');` : ""}
             `}
           </Script>
         </>
@@ -73,6 +78,15 @@ export function trackEvent(
 
   if (window.gtag) {
     window.gtag("event", action, params);
+    if (action === "whatsapp_click" || action === "lead") {
+      window.gtag("event", "generate_lead", {
+        method: action === "whatsapp_click" ? "whatsapp" : "enquiry_form",
+        ...params,
+      });
+      if (adsWhatsAppSendTo) {
+        window.gtag("event", "conversion", { send_to: adsWhatsAppSendTo });
+      }
+    }
   }
 
   if (window.fbq) {

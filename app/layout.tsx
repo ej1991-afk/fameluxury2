@@ -7,7 +7,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileNav } from "@/components/MobileNav";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { localBusinessJsonLd, websiteJsonLd, defaultKeywords } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -126,9 +125,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CompareProvider>
           <CurrencyProvider>
             <Header />
-            <main className="flex-1 pb-24 md:pb-0">{children}</main>
+            <main className="flex-1">{children}</main>
             <Footer />
-            <WhatsAppButton />
           </CurrencyProvider>
         </CompareProvider>
       </body>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { getLocationPages, locations } from "@/lib/locations";
 import { whatsappUrl } from "@/lib/site";
 
@@ -78,16 +79,17 @@ export default function LocationsPage() {
           <p className="mt-2 text-sm text-muted">
             Share your exact location and timing on WhatsApp for a delivery quote.
           </p>
-          <a
+          <WhatsAppLink
             href={whatsappUrl(
               "Hi Fame Luxury! I'd like to arrange delivery for a luxury car rental.",
             )}
             target="_blank"
             rel="noopener noreferrer"
+            eventLabel="locations_index"
             className="mt-4 inline-flex h-11 items-center rounded-full bg-gold px-6 text-sm font-semibold text-background"
           >
             Request Delivery
-          </a>
+          </WhatsAppLink>
         </Reveal>
       </div>
     </div>

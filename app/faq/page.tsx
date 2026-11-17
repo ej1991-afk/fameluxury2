@@ -2,6 +2,7 @@ import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { faqItems } from "@/lib/faq";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { faqJsonLd } from "@/lib/seo";
 import { whatsappUrl } from "@/lib/site";
 
@@ -39,14 +40,15 @@ export default function FAQPage() {
           <p className="mt-2 text-sm text-muted">
             Our concierge team is ready to help on WhatsApp.
           </p>
-          <a
+          <WhatsAppLink
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            eventLabel="faq"
             className="mt-4 inline-flex h-11 items-center rounded-full bg-gold px-6 text-sm font-semibold text-background"
           >
             Chat on WhatsApp
-          </a>
+          </WhatsAppLink>
         </Reveal>
       </div>
     </div>

@@ -9,6 +9,7 @@ import {
   getAllPosts,
   getFeaturedPost,
 } from "@/lib/blog";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { blogIndexJsonLd, breadcrumbJsonLd, defaultKeywords } from "@/lib/seo";
 import { whatsappUrl } from "@/lib/site";
 import type { BlogCategory } from "@/lib/types";
@@ -209,16 +210,17 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             >
               View fleet & prices
             </Link>
-            <a
+            <WhatsAppLink
               href={whatsappUrl(
                 "Hi Fame Luxury! I read your blog and want a luxury car rental quote in Dubai.",
               )}
               target="_blank"
               rel="noopener noreferrer"
+              eventLabel="blog_index"
               className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold text-foreground"
             >
               WhatsApp concierge
-            </a>
+            </WhatsAppLink>
           </div>
         </Reveal>
       </div>

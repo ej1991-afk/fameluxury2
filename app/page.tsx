@@ -25,6 +25,7 @@ import { getAllPosts } from "@/lib/blog";
 import { getCarImage, heroImage } from "@/lib/images";
 import { locations } from "@/lib/locations";
 import { faqJsonLd } from "@/lib/seo";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
 function getHomepageFeaturedCars(limit = 8) {
@@ -150,15 +151,16 @@ export default function HomePage() {
               >
                 Browse the fleet
               </Link>
-              <a
+              <WhatsAppLink
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                eventLabel="home_hero"
                 className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-gold/40 px-8 text-sm font-semibold text-gold hover:bg-gold/10"
               >
                 <IconWhatsApp className="h-4 w-4" />
                 WhatsApp enquiry
-              </a>
+              </WhatsAppLink>
             </div>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {trustBadges.map((badge) => (

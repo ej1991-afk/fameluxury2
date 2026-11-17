@@ -42,10 +42,101 @@ export const categorySeo: Record<
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "mercedes-g63-rental-dubai",
+    title: "Mercedes-Benz G63 Rental in Dubai",
+    excerpt:
+      "Rent a Mercedes-Benz G63 AMG in Dubai from AED 1,500 a day. Six colours, five seats, no-deposit terms, and hotel or DXB delivery.",
+    category: "guides",
+    author: "Fame Luxury Editorial",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    readTime: 6,
+    image: "/blog/mercedes-g63-rental-dubai.webp",
+    imageAlt: "White Mercedes-Benz G63 AMG rental in a Dubai studio",
+    relatedCarSlugs: [
+      "mercedes-g63-white",
+      "mercedes-g63-black-matte",
+      "mercedes-g63-gray",
+    ],
+    featured: false,
+    keywords: [
+      "Mercedes G63 rental Dubai",
+      "G-Wagon rental Dubai",
+      "G63 AMG hire Dubai",
+      "no deposit G63 rental Dubai",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "The Mercedes-Benz G63 AMG is the five-seat G-Wagen on the Fame Luxury fleet. There are six: Polar White, glossy black, satin black, full matte black, Selenite Grey, and satin gray. Each uses a 4.0-litre twin-turbo V8 with 577 hp, all-wheel drive, and a 9-speed automatic. 0–100 km/h is 4.5 seconds. Self-drive rental starts from AED 1,500 a day, and every G63 is a no-deposit car.",
+      },
+      {
+        type: "h2",
+        text: "Which colour to book",
+      },
+      {
+        type: "ul",
+        items: [
+          "G63 White — Polar White, the brightest car for Palm Jumeirah and wedding photos.",
+          "G63 Black — glossy Obsidian Black for evening Downtown and DIFC.",
+          "G63 Black / Matte — satin black, the quietest dark finish.",
+          "G63 Matte Black — a full matte wrap when you want the most aggressive look.",
+          "G63 Gray — Selenite Grey for a week of hotel driving.",
+          "G63 Gray / Matte — satin gray wrap, between the factory grey and a full wrap.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The rate, seats, and performance are the same. Book whichever colour is free for your dates.",
+      },
+      {
+        type: "h2",
+        text: "When the G63 is the right rental",
+      },
+      {
+        type: "p",
+        text: "Choose it when you want five seats, high ride height, and a Dubai icon without supercar money. It is the wrong car for seven passengers — that booking is the GMC Yukon Denali, from AED 1,000 a day. If you want the same boxy shape with more power, the Brabus G Blue Carbon starts from AED 1,800 a day. The Lamborghini Urus starts from AED 2,200 a day when the badge matters more than the G-Wagen silhouette.",
+      },
+      {
+        type: "h2",
+        text: "What to confirm before you book",
+      },
+      {
+        type: "ul",
+        items: [
+          "Driver age is 25+ for the G63.",
+          "Passport, driving licence, and an International Driving Permit when your licence is not in English.",
+          "Hotel, villa, or DXB delivery is available. Share the pin and arrival time.",
+          "No-deposit terms are confirmed in the WhatsApp quote, along with mileage and fuel.",
+        ],
+      },
+      {
+        type: "faq",
+        items: [
+          {
+            question: "How much is a Mercedes G63 to rent in Dubai?",
+            answer:
+              "Every G63 on the Fame Luxury fleet starts from AED 1,500 per day. Dates, mileage, and delivery can change the quote.",
+          },
+          {
+            question: "Is the G63 a no-deposit rental?",
+            answer:
+              "Yes. The G63, Urus, and Yukon Denali are no-deposit cars. Confirm the terms in the WhatsApp quote before handover.",
+          },
+          {
+            question: "Can you deliver a G63 to a hotel or DXB?",
+            answer:
+              "Yes. Share the hotel, villa, or terminal and the arrival time. Return is usually the same area or Al Quoz.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "lamborghini-urus-rental-dubai",
     title: "Lamborghini Urus Rental in Dubai",
     excerpt:
-      "Rent a Lamborghini Urus in Dubai from AED 1,999 a day. Gray, silver, and black cars, five seats, no-deposit terms, and hotel or DXB delivery.",
+      "Rent a Lamborghini Urus in Dubai from AED 2,200 a day. Gray, silver, and black cars, five seats, no-deposit terms, and hotel or DXB delivery.",
     category: "guides",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-10-20",
@@ -68,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "The Lamborghini Urus is the five-seat supercar SUV on the Fame Luxury fleet. There are three: a 2021 gray, a 2021 black, and a 2022 silver. Each uses a 4.0-litre twin-turbo V8 with 650 hp, all-wheel drive, and an 8-speed automatic. 0–100 km/h is 3.6 seconds. Self-drive rental starts from AED 1,999 a day, and all three are no-deposit cars.",
+        text: "The Lamborghini Urus is the five-seat supercar SUV on the Fame Luxury fleet. There are three: a 2021 gray, a 2021 black, and a 2022 silver. Each uses a 4.0-litre twin-turbo V8 with 650 hp, all-wheel drive, and an 8-speed automatic. 0–100 km/h is 3.6 seconds. Self-drive rental starts from AED 2,200 a day, and all three are no-deposit cars.",
       },
       {
         type: "h2",
@@ -92,7 +183,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Choose it when the group is up to five people and you still want Lamborghini presence. It is the wrong car for seven passengers — that booking is the GMC Yukon Denali, from AED 899 a day. If you want the same five seats for less, the Mercedes-Benz G63 starts from AED 1,199 a day and is also no-deposit. The Huracán and F8 are two-seat alternatives when luggage is not the point.",
+        text: "Choose it when the group is up to five people and you still want Lamborghini presence. It is the wrong car for seven passengers — that booking is the GMC Yukon Denali, from AED 1,000 a day. If you want the same five seats for less, the Mercedes-Benz G63 starts from AED 1,500 a day and is also no-deposit. The Huracán and F8 are two-seat alternatives when luggage is not the point.",
       },
       {
         type: "h2",
@@ -113,7 +204,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "How much is a Lamborghini Urus to rent in Dubai?",
             answer:
-              "The gray, silver, and black Urus each start from AED 1,999 per day. Dates, mileage, and delivery can change the quote.",
+              "The gray, silver, and black Urus each start from AED 2,200 per day. Dates, mileage, and delivery can change the quote.",
           },
           {
             question: "Is the Urus a no-deposit rental?",
@@ -128,7 +219,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ferrari-f8-tributo-rental-dubai",
     title: "Ferrari F8 Tributo Rental in Dubai",
     excerpt:
-      "Rent the red Ferrari F8 Tributo in Dubai from AED 2,399 a day: who it suits, what to confirm, and how hotel or DXB delivery works.",
+      "Rent the red Ferrari F8 Tributo in Dubai from AED 2,500 a day: who it suits, what to confirm, and how hotel or DXB delivery works.",
     category: "supercars",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-10-15",
@@ -151,7 +242,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "The Ferrari F8 Tributo is the two-seat Ferrari on the Fame Luxury fleet. It is a 2022 Rosso Corsa car with a 3.9-litre twin-turbo V8, 720 hp, and a 0–100 km/h time of 2.9 seconds. Self-drive rental starts from AED 2,399 a day, with handover at a hotel, villa, or DXB.",
+        text: "The Ferrari F8 Tributo is the two-seat Ferrari on the Fame Luxury fleet. It is a 2022 Rosso Corsa car with a 3.9-litre twin-turbo V8, 720 hp, and a 0–100 km/h time of 2.9 seconds. Self-drive rental starts from AED 2,500 a day, with handover at a hotel, villa, or DXB.",
       },
       {
         type: "h2",
@@ -168,9 +259,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Huracán EVO Coupe Red — from AED 2,199/day, a naturally aspirated V10 and all-wheel drive.",
-          "Porsche 911 GT3 — from AED 2,499/day, a track-bred flat-six in satin black.",
-          "Huracán EVO Spyder — from AED 2,499/day if you want the roof down on the same V10.",
+          "Huracán EVO Coupe Red — from AED 2,200/day, a naturally aspirated V10 and all-wheel drive.",
+          "Porsche 911 GT3 — from AED 2,500/day, a track-bred flat-six in satin black.",
+          "Huracán EVO Spyder — from AED 2,600/day if you want the roof down on the same V10.",
         ],
       },
       {
@@ -192,7 +283,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "How much is the Ferrari F8 Tributo to rent in Dubai?",
             answer:
-              "The red F8 Tributo starts from AED 2,399 per day. The final quote depends on dates, mileage, and delivery.",
+              "The red F8 Tributo starts from AED 2,500 per day. The final quote depends on dates, mileage, and delivery.",
           },
           {
             question: "Can you deliver the F8 to a hotel or DXB?",
@@ -207,7 +298,7 @@ export const blogPosts: BlogPost[] = [
     slug: "porsche-911-gt3-rental-dubai",
     title: "Porsche 911 GT3 Rental in Dubai",
     excerpt:
-      "The matte black Porsche 911 GT3 on the Fame Luxury fleet: 510 hp, two seats, AED 2,499 a day, and when to pick it over a Huracán.",
+      "The matte black Porsche 911 GT3 on the Fame Luxury fleet: 510 hp, two seats, AED 2,500 a day, and when to pick it over a Huracán.",
     category: "supercars",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-10-15",
@@ -230,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "The Porsche on the Fame Luxury fleet is a 2024 911 GT3 in black matte. It uses a 4.0-litre naturally aspirated flat-six with 510 hp, a 7-speed PDK, and rear-wheel drive. 0–100 km/h is 3.4 seconds. The daily rate starts from AED 2,499.",
+        text: "The Porsche on the Fame Luxury fleet is a 2024 911 GT3 in black matte. It uses a 4.0-litre naturally aspirated flat-six with 510 hp, a 7-speed PDK, and rear-wheel drive. 0–100 km/h is 3.4 seconds. The daily rate starts from AED 2,500.",
       },
       {
         type: "h2",
@@ -238,7 +329,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Pick it if you want a focused sports car you can also use for a Marina or Downtown evening. It is still a two-seater, so it is not a family car. Drivers who want all-wheel drive and a louder V10 should look at the Huracán EVO Coupe, which starts from AED 2,199.",
+        text: "Pick it if you want a focused sports car you can also use for a Marina or Downtown evening. It is still a two-seater, so it is not a family car. Drivers who want all-wheel drive and a louder V10 should look at the Huracán EVO Coupe, which starts from AED 2,200.",
       },
       {
         type: "h2",
@@ -262,7 +353,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "How much does the 911 GT3 cost to rent in Dubai?",
             answer:
-              "The matte black GT3 starts from AED 2,499 per day. Dates and delivery can change the quote.",
+              "The matte black GT3 starts from AED 2,500 per day. Dates and delivery can change the quote.",
           },
           {
             question: "Is the GT3 a good first supercar rental?",
@@ -277,7 +368,7 @@ export const blogPosts: BlogPost[] = [
     slug: "lamborghini-huracan-spyder-vs-coupe-dubai",
     title: "Huracán Spyder vs Coupe Rental in Dubai",
     excerpt:
-      "Blue or black Huracán EVO Spyder at AED 2,499, or the red coupe at AED 2,199. Which Lamborghini to rent in Dubai, and what changes with the roof.",
+      "Blue or black Huracán EVO Spyder at AED 2,600, or the red coupe at AED 2,200. Which Lamborghini to rent in Dubai, and what changes with the roof.",
     category: "guides",
     author: "Fame Luxury Editorial",
     publishedAt: "2026-10-15",
@@ -304,7 +395,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "Spyder — from AED 2,499 a day",
+        text: "Spyder — from AED 2,600 a day",
       },
       {
         type: "p",
@@ -312,11 +403,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "Coupe — from AED 2,199 a day",
+        text: "Coupe — from AED 2,200 a day",
       },
       {
         type: "p",
-        text: "The red coupe is AED 300 a day less and a little quicker, at 3.3 seconds to 100 km/h. Choose it for Downtown, Business Bay, and DIFC when you want the V10 without the open cabin, or when the booking is mostly evening driving.",
+        text: "The red coupe is AED 400 a day less and a little quicker, at 3.3 seconds to 100 km/h. Choose it for Downtown, Business Bay, and DIFC when you want the V10 without the open cabin, or when the booking is mostly evening driving.",
       },
       {
         type: "h2",
@@ -337,7 +428,7 @@ export const blogPosts: BlogPost[] = [
           {
             question: "Which Huracán is cheaper to rent in Dubai?",
             answer:
-              "The red Huracán EVO Coupe starts from AED 2,199 a day. Both Spyders start from AED 2,499.",
+              "The red Huracán EVO Coupe starts from AED 2,200 a day. Both Spyders start from AED 2,600.",
           },
           {
             question: "Can I switch from Spyder to coupe if the weather changes?",
@@ -374,7 +465,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         type: "p",
-        text: "A two-seat supercar is the wrong tool when the booking is a family, a crew, or a week of hotel hops with luggage. Fame Luxury keeps a 2026 GMC Yukon Denali in Onyx Black for that job: seven seats, all-wheel drive, and no-deposit terms. Self-drive starts from AED 899 per day.",
+        text: "A two-seat supercar is the wrong tool when the booking is a family, a crew, or a week of hotel hops with luggage. Fame Luxury keeps a 2026 GMC Yukon Denali in Onyx Black for that job: seven seats, all-wheel drive, and no-deposit terms. Self-drive starts from AED 1,000 per day.",
       },
       {
         type: "h2",
@@ -400,9 +491,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Yukon Denali — from AED 899/day, seven seats, no deposit. The practical group car.",
-          "Mercedes-Benz G63 AMG — from AED 1,199/day, five seats. The classic Dubai luxury SUV, in several colours.",
-          "Lamborghini Urus — from AED 1,999/day, five seats. The choice when the SUV also has to be the supercar.",
+          "Yukon Denali — from AED 1,000/day, seven seats, no deposit. The practical group car.",
+          "Mercedes-Benz G63 AMG — from AED 1,500/day, five seats. The classic Dubai luxury SUV, in several colours.",
+          "Lamborghini Urus — from AED 2,200/day, five seats. The choice when the SUV also has to be the supercar.",
         ],
       },
       {
@@ -477,7 +568,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The Rocket 900 is the car for a driver who wants Brabus drama without giving up rear seats. It is a widebody sedan with a low stance, so it photographs well on Sheikh Zayed Road and at hotel arrivals, and it still carries a small group. Self-drive starts from AED 1,999 per day.",
+        text: "The Rocket 900 is the car for a driver who wants Brabus drama without giving up rear seats. It is a widebody sedan with a low stance, so it photographs well on Sheikh Zayed Road and at hotel arrivals, and it still carries a small group. Self-drive starts from AED 2,000 per day.",
       },
       {
         type: "p",
@@ -489,7 +580,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The Brabus G-Class in blue and black carbon is the fleet’s dressed G-Wagon. It keeps the upright shape, the easy hotel-valet access, and the space of a G63, with carbon and colour that a standard black or white G63 does not have. Self-drive starts from AED 1,799 per day.",
+        text: "The Brabus G-Class in blue and black carbon is the fleet’s dressed G-Wagon. It keeps the upright shape, the easy hotel-valet access, and the space of a G63, with carbon and colour that a standard black or white G63 does not have. Self-drive starts from AED 1,800 per day.",
       },
       {
         type: "p",
@@ -502,9 +593,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "G63 AMG — from AED 1,199/day. The practical luxury SUV, in black, gray, white, and matte finishes.",
-          "Brabus G-Class Blue Carbon — from AED 1,799/day. Same G-Class usability, with a carbon specification.",
-          "Brabus Rocket 900 Gray — from AED 1,999/day. A low widebody sedan for drivers who want the rarer shape.",
+          "G63 AMG — from AED 1,500/day. The practical luxury SUV, in black, gray, white, and matte finishes.",
+          "Brabus G-Class Blue Carbon — from AED 1,800/day. Same G-Class usability, with a carbon specification.",
+          "Brabus Rocket 900 Gray — from AED 2,000/day. A low widebody sedan for drivers who want the rarer shape.",
         ],
       },
       {
@@ -592,7 +683,7 @@ export const blogPosts: BlogPost[] = [
           "Full name of the driver, matching the licence and the card.",
           "Passport or Emirates ID, plus the licence (and an IDP if the licence is not in English or Arabic).",
           "Hotel name and room, villa address, or terminal and flight number.",
-          "Preferred model and dates. A white G63 starts from AED 1,199/day, a black Urus from AED 1,999/day, and a Ferrari F8 Tributo from AED 2,399/day.",
+          "Preferred model and dates. A white G63 starts from AED 1,500/day, a black Urus from AED 2,200/day, and a Ferrari F8 Tributo from AED 2,500/day.",
         ],
       },
       {
@@ -692,7 +783,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "The Huracán EVO is the low, loud alternative to the Urus. The red coupe starts from AED 2,199 a day. The blue and black Spyders start from AED 2,499 if the booking is for Palm Jumeirah or JBR with the roof down. All three are two-seat, all-wheel-drive V10s.",
+        text: "The Huracán EVO is the low, loud alternative to the Urus. The red coupe starts from AED 2,200 a day. The blue and black Spyders start from AED 2,600 if the booking is for Palm Jumeirah or JBR with the roof down. All three are two-seat, all-wheel-drive V10s.",
       },
       {
         type: "h2",
@@ -701,10 +792,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Porsche 911 GT3 — a matte black, naturally aspirated sports car from AED 2,499/day.",
-          "Ferrari F8 Tributo — the Rosso two-seater from AED 2,399/day.",
-          "Brabus Rocket 900 — a 900 hp G-Class from AED 1,999/day.",
-          "Brabus G-Class Blue / Black Carbon — a Widestar from AED 1,799/day.",
+          "Porsche 911 GT3 — a matte black, naturally aspirated sports car from AED 2,500/day.",
+          "Ferrari F8 Tributo — the Rosso two-seater from AED 2,500/day.",
+          "Brabus Rocket 900 — a 900 hp G-Class from AED 2,000/day.",
+          "Brabus G-Class Blue / Black Carbon — a Widestar from AED 1,800/day.",
         ],
       },
       {
@@ -792,10 +883,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "GMC Yukon Denali: from AED 899/day, with seven seats and no-deposit terms.",
-          "Mercedes-Benz G63: from AED 1,199/day, including no-deposit models.",
-          "Brabus G-Class and Rocket 900: from AED 1,799 and AED 1,999/day.",
-          "Lamborghini Urus: from AED 1,999/day. Huracán EVO Coupe from AED 2,199, F8 Tributo from AED 2,399, Spyder and 911 GT3 from AED 2,499.",
+          "GMC Yukon Denali: from AED 1,000/day, with seven seats and no-deposit terms.",
+          "Mercedes-Benz G63: from AED 1,500/day, including no-deposit models.",
+          "Brabus G-Class and Rocket 900: from AED 1,800 and AED 2,000/day.",
+          "Lamborghini Urus: from AED 2,200/day. Huracán EVO Coupe from AED 2,200, F8 Tributo from AED 2,500, Spyder from AED 2,600, 911 GT3 from AED 2,500.",
         ],
       },
       {
@@ -1244,9 +1335,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Huracán EVO Spyder Blue — open-top V10 from AED 2,499/day.",
-          "Huracán EVO Spyder Black — the same Spyder in Nero, also from AED 2,499/day.",
-          "Huracán EVO Coupe Red — the hardtop alternative from AED 2,199/day when you want the V10 with the roof fixed.",
+          "Huracán EVO Spyder Blue — open-top V10 from AED 2,600/day.",
+          "Huracán EVO Spyder Black — the same Spyder in Nero, also from AED 2,600/day.",
+          "Huracán EVO Coupe Red — the hardtop alternative from AED 2,200/day when you want the V10 with the roof fixed.",
         ],
       },
       {
@@ -1312,10 +1403,10 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Lamborghini Urus — five seats and supercar presence, from AED 1,999/day, with no-deposit terms.",
-          "Mercedes-Benz G63 — from AED 1,199/day, including black, white, gray, and matte cars.",
-          "Brabus G-Class — the blue and black carbon Widestar from AED 1,799/day.",
-          "GMC Yukon Denali — seven seats from AED 899/day, the roomiest car in the fleet.",
+          "Lamborghini Urus — five seats and supercar presence, from AED 2,200/day, with no-deposit terms.",
+          "Mercedes-Benz G63 — from AED 1,500/day, including black, white, gray, and matte cars.",
+          "Brabus G-Class — the blue and black carbon Widestar from AED 1,800/day.",
+          "GMC Yukon Denali — seven seats from AED 1,000/day, the roomiest car in the fleet.",
         ],
       },
       {
@@ -1460,9 +1551,9 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Mercedes-Benz G63 White — a bright arrival car from AED 1,199/day.",
-          "Lamborghini Urus Silver — five seats and room for a gown, from AED 1,999/day.",
-          "Brabus Rocket 900 — the widest presence in the fleet, from AED 1,999/day.",
+          "Mercedes-Benz G63 White — a bright arrival car from AED 1,500/day.",
+          "Lamborghini Urus Silver — five seats and room for a gown, from AED 2,200/day.",
+          "Brabus Rocket 900 — the widest presence in the fleet, from AED 2,000/day.",
         ],
       },
       {

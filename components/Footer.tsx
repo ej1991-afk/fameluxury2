@@ -11,6 +11,7 @@ import {
 } from "@/components/Icons";
 import { getAllBrands } from "@/lib/cars";
 import { brandToSlug } from "@/lib/brands";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
 const footerLinks = {
@@ -35,7 +36,7 @@ export function Footer() {
   const brands = getAllBrands();
 
   return (
-    <footer className="border-t border-border bg-surface safe-bottom pb-24 md:pb-0">
+    <footer className="border-t border-border bg-surface safe-bottom">
       <div className="gold-hairline" />
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12">
@@ -51,10 +52,14 @@ export function Footer() {
                 <IconPhone className="h-4 w-4 text-gold" />
                 {siteConfig.phone}
               </a>
-              <a href={whatsappUrl()} className="inline-flex items-center gap-2 hover:text-gold">
+              <WhatsAppLink
+                href={whatsappUrl()}
+                eventLabel="footer"
+                className="inline-flex items-center gap-2 hover:text-gold"
+              >
                 <IconWhatsApp className="h-4 w-4 text-gold" />
                 WhatsApp concierge
-              </a>
+              </WhatsAppLink>
               <a
                 href={siteConfig.mapsUrl}
                 target="_blank"

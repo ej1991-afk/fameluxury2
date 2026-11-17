@@ -37,7 +37,7 @@ export function localBusinessJsonLd() {
     description: siteConfig.description,
     telephone: `+${siteConfig.phoneRaw}`,
     email: siteConfig.email,
-    priceRange: "AED 999–AED 5999",
+    priceRange: "AED 1000–AED 2600",
     currenciesAccepted: "AED",
     paymentAccepted: "Cash, Credit Card, Bank Transfer",
     address: {

@@ -8,7 +8,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "convertible",
     tagline: "2023 open-top V10",
-    pricePerDay: 2499,
+    pricePerDay: 2600,
     image: "/cars/lamborghini-huracan-evo-spyder-blue-noplate.webp",
     specs: {
       horsepower: 610,
@@ -27,7 +27,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "convertible",
     tagline: "2023 Nero open-top",
-    pricePerDay: 2499,
+    pricePerDay: 2600,
     image: "/cars/lamborghini-huracan-evo-spyder-black-noplate.webp",
     specs: {
       horsepower: 610,
@@ -45,7 +45,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "supercar",
     tagline: "2022 Rosso V10 coupe",
-    pricePerDay: 2199,
+    pricePerDay: 2200,
     image: "/cars/lamborghini-huracan-evo-coupe-red-noplate.webp",
     specs: {
       horsepower: 610,
@@ -64,7 +64,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "suv",
     tagline: "2021 Grigio super SUV",
-    pricePerDay: 1999,
+    pricePerDay: 2200,
     image: "/cars/lamborghini-urus-gray-2021-noplate.webp",
     specs: {
       horsepower: 650,
@@ -83,7 +83,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "suv",
     tagline: "2022 silver super SUV",
-    pricePerDay: 1999,
+    pricePerDay: 2200,
     image: "/cars/lamborghini-urus-silver-2022-noplate.webp",
     specs: {
       horsepower: 650,
@@ -103,7 +103,7 @@ export const cars: Car[] = [
     brand: "Lamborghini",
     category: "suv",
     tagline: "2021 Nero super SUV",
-    pricePerDay: 1999,
+    pricePerDay: 2200,
     image: "/cars/lamborghini-urus-black-2021-noplate.webp",
     specs: {
       horsepower: 650,
@@ -123,7 +123,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 satin black G-Wagen",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-black-matte-noplate.webp",
     specs: {
       horsepower: 577,
@@ -143,7 +143,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 glossy Obsidian Black",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-black-noplate.webp",
     specs: {
       horsepower: 577,
@@ -162,7 +162,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 full matte wrap",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-matte-black-noplate.webp",
     specs: {
       horsepower: 577,
@@ -181,7 +181,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 Selenite Grey",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-gray-noplate.webp",
     specs: {
       horsepower: 577,
@@ -200,7 +200,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 satin gray wrap",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-gray-matte-noplate.webp",
     specs: {
       horsepower: 577,
@@ -219,7 +219,7 @@ export const cars: Car[] = [
     brand: "Mercedes-Benz",
     category: "suv",
     tagline: "2023 Polar White",
-    pricePerDay: 1199,
+    pricePerDay: 1500,
     image: "/cars/mercedes-g63-white-noplate.webp",
     specs: {
       horsepower: 577,
@@ -239,7 +239,7 @@ export const cars: Car[] = [
     brand: "Brabus",
     category: "suv",
     tagline: "2022 Widestar carbon",
-    pricePerDay: 1799,
+    pricePerDay: 1800,
     image: "/cars/brabus-g-blue-carbon-noplate.webp",
     specs: {
       horsepower: 800,
@@ -258,7 +258,7 @@ export const cars: Car[] = [
     brand: "Brabus",
     category: "suv",
     tagline: "2024 900 hp G-Wagen",
-    pricePerDay: 1999,
+    pricePerDay: 2000,
     image: "/cars/brabus-rocket-900-gray-noplate.webp",
     specs: {
       horsepower: 900,
@@ -277,7 +277,7 @@ export const cars: Car[] = [
     brand: "Porsche",
     category: "sports",
     tagline: "2024 satin GT3",
-    pricePerDay: 2499,
+    pricePerDay: 2500,
     image: "/cars/porsche-911-gt3-black-matte-noplate.webp",
     specs: {
       horsepower: 510,
@@ -295,7 +295,7 @@ export const cars: Car[] = [
     brand: "Ferrari",
     category: "supercar",
     tagline: "2022 Rosso Corsa",
-    pricePerDay: 2399,
+    pricePerDay: 2500,
     image: "/cars/ferrari-f8-tributo-red-noplate.webp",
     specs: {
       horsepower: 720,
@@ -314,7 +314,7 @@ export const cars: Car[] = [
     brand: "GMC",
     category: "suv",
     tagline: "2026 Onyx Black",
-    pricePerDay: 899,
+    pricePerDay: 1000,
     image: "/cars/gmc-yukon-denali-black-noplate.webp",
     specs: {
       horsepower: 420,

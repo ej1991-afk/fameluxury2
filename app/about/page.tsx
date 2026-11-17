@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { siteConfig, whatsappUrl } from "@/lib/site";
 
 export const metadata = {
@@ -108,14 +109,15 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal className="mt-12 text-center">
-          <a
+          <WhatsAppLink
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            eventLabel="about"
             className="inline-flex h-12 items-center rounded-full bg-gold px-8 text-sm font-semibold text-background"
           >
             Get in Touch on WhatsApp
-          </a>
+          </WhatsAppLink>
           <p className="mt-4">
             <Link href="/fleet" className="text-sm text-gold hover:text-gold-light">
               Or browse our fleet &rarr;
